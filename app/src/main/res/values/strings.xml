@@ -7,4 +7,7 @@
     <string name="title_impact">Impact</string>
     <string name="title_profile">Profile</string>
     <string name="error_not_available">Sorry, this is not yet available</string>
+    <string name="start_button">Create habit</string>
+    <string name="title_explore">Explore habits</string>
+    <string name="explore_category_text">Select the area you want to be more sustainable in</string>
 </resources>
