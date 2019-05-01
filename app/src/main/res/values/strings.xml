@@ -6,4 +6,5 @@
     <string name="title_habits">Habits</string>
     <string name="title_impact">Impact</string>
     <string name="title_profile">Profile</string>
+    <string name="error_not_available">Sorry, this is not yet available</string>
 </resources>

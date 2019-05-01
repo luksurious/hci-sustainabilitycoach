@@ -3,23 +3,41 @@ package eu.eitdigital.hcid.sustainabilitycoach
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var textMessage: TextView
+    private lateinit var toolbar: Toolbar
+
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                textMessage.setText(R.string.title_home)
+                toolbar.title = resources.getString(R.string.app_name)
+
+                openFragment(HomeFragment.newInstance())
+
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_habits -> {
-                textMessage.setText(R.string.title_habits)
+                toolbar.title = resources.getString(R.string.title_habits)
+
+                openFragment(HabitsFragment.newInstance())
+
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_impact -> {
-                textMessage.setText(R.string.title_impact)
+                toolbar.title = resources.getString(R.string.title_impact)
+
+                openFragment(ImpactFragment.newInstance())
+
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_profile -> {
+                toolbar.title = resources.getString(R.string.title_profile)
+
+                openFragment(ProfileFragment.newInstance())
+
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -29,9 +47,19 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        toolbar = findViewById(R.id.appToolbar)
 
-        textMessage = findViewById(R.id.message)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
+        toolbar.title = resources.getString(R.string.app_name)
+        openFragment(HomeFragment.newInstance())
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }
