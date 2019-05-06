@@ -1,11 +1,8 @@
 package eu.eitdigital.hcid.sustainabilitycoach
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -46,20 +43,14 @@ class HomeActivity : AppCompatActivity() {
     private fun setupHomeTab() {
         appToolbar.title = resources.getString(R.string.app_name)
 
-        openFragment(HomeFragment.newInstance(this))
-
-        // TODO: how to get button from fragment? Delay? Put in fragment class?
-//        val button: Button = findViewById(R.id.start_button)
-//
-//        button.setOnClickListener {
-//            val intent = Intent(this, ExploreActivity::class.java)
-//            startActivity(intent)
-//        }
+        openFragment(HomeFragment.newInstance())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        setSupportActionBar(appToolbar)
 
         nav_view.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
@@ -71,10 +62,5 @@ class HomeActivity : AppCompatActivity() {
         transaction.replace(R.id.fragment_container, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-    }
-
-    fun openExploreActivity() {
-        val intent = Intent(this, ExploreActivity::class.java)
-        startActivity(intent)
     }
 }

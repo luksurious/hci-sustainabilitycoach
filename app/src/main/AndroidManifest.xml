@@ -11,12 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ExploreActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
-        </activity>
-        <activity android:name=".HabitsActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home">
@@ -26,10 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".TestActivity"
-            android:label="@string/title_activity_test"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".ExploreActivity"
+            android:parentActivityName=".HomeActivity" />
     </application>
 
 </manifest>

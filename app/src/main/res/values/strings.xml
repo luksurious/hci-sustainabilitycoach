@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SustainabilityCoach</string>
     <string name="title_activity_test">TestActivity</string>
-    <string name="title_activity_home">Welcome</string>
+    <string name="title_activity_home">Sustainability Coach</string>
     <string name="title_home">Home</string>
     <string name="title_habits">Habits</string>
     <string name="title_impact">Impact</string>
@@ -10,4 +10,7 @@
     <string name="start_button">Create habit</string>
     <string name="title_explore">Explore habits</string>
     <string name="explore_category_text">Select the area you want to be more sustainable in</string>
+    <string name="explore_difficulty_text">How difficult?</string>
+    <string name="explore_button_next">Next</string>
+
 </resources>

@@ -9,8 +9,8 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorLight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/appToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
             android:background="@color/colorLight"
             app:title="@string/app_name"
             app:titleTextColor="@color/colorPrimaryDark" />
