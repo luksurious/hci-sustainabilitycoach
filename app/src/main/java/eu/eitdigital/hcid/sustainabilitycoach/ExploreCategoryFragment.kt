@@ -7,12 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.card.MaterialCardView
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_explore_category.*
 
 private const val ARG_CATEGORY = "category"
 
 class ExploreCategoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var activeCategories: ArrayList<String> = ArrayList()
     private var listener: ExploreFragmentInteractionListener? = null
 
@@ -20,7 +20,7 @@ class ExploreCategoryFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
             val catArgument = it.getString(ARG_CATEGORY)
-            if (catArgument != null) {
+            if (catArgument != null && catArgument != "") {
                 activeCategories.addAll(catArgument.split(","))
             }
         }
@@ -52,18 +52,35 @@ class ExploreCategoryFragment : Fragment() {
         }
 
         next_button.setOnClickListener {
+            if (activeCategories.size != 1 || !activeCategories.contains(Category.FOOD.category)) {
+                Snackbar.make(card_category_food, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
+                    .show()
+
+                return@setOnClickListener
+            }
+
             listener?.setCategorySelection(activeCategories.toString())
             listener?.onFragmentInteraction(STEP)
         }
+
+        if (activeCategories.size == 0) {
+            next_button.isEnabled = false
+        }
     }
 
-    fun toggleCategorySelection(category: Category, card: MaterialCardView) {
+    private fun toggleCategorySelection(category: Category, card: MaterialCardView) {
         card.toggle()
 
         if (card.isChecked) {
             activeCategories.add(category.category)
+
+            next_button.isEnabled = true
         } else {
             activeCategories.remove(category.category)
+
+            if (activeCategories.size == 0) {
+                next_button.isEnabled = false
+            }
         }
     }
 
@@ -84,15 +101,6 @@ class ExploreCategoryFragment : Fragment() {
     companion object {
         val STEP = "Category"
 
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param category Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ExploreCategoryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(category: String?) =
             ExploreCategoryFragment().apply {
