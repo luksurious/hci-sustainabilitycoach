@@ -8,8 +8,7 @@ import androidx.core.app.NavUtils
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_explore.*
 
-class ExploreActivity : AppCompatActivity(),
-    ExploreFragmentInteractionListener {
+class ExploreActivity : AppCompatActivity(), ExploreFragmentInteractionListener {
 
     var filters: ExploreFilters = ExploreFilters("", "")
 
