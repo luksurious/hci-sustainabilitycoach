@@ -49,6 +49,12 @@ class ExploreActivity : AppCompatActivity(),
         }
     }
 
+    override fun goBackToCategorySelection(origin: String) {
+        when (origin) {
+            ExploreResultsFragment.STEP -> showCategorySelection()
+        }
+    }
+
     override fun setCategorySelection(category: String) {
         filters.category = category
     }
