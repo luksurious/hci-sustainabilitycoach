@@ -31,7 +31,7 @@ class ExploreActivity : AppCompatActivity(),
     }
     private fun showDifficultySelection(addToStack: Boolean = true) {
         state = ExploreDifficultyFragment.STEP
-        openFragment(ExploreDifficultyFragment.newInstance(null, null), addToStack)
+        openFragment(ExploreDifficultyFragment.newInstance(filters.difficulty), addToStack)
     }
     private fun showResultsSelection(addToStack: Boolean = true) {
         state = ExploreResultsFragment.STEP

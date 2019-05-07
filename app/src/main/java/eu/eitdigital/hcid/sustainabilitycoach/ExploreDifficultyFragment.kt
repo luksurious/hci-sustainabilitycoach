@@ -6,25 +6,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_explore_difficulty.*
+import kotlinx.android.synthetic.main.fragment_explore_difficulty.next_button
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_DIFFICULTY = "difficulty"
 
 class ExploreDifficultyFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var difficulty: String = Difficulty.MEDIUM.difficulty
     private var listener: ExploreFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            val difArgument = it.getString(ARG_DIFFICULTY)
+
+            if (difArgument != null && difArgument != "") {
+                difficulty = difArgument
+            }
         }
     }
 
@@ -40,8 +40,32 @@ class ExploreDifficultyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         next_button.setOnClickListener {
-            listener?.setDifficultySelection("Some difficulty")
+            if (difficulty != Difficulty.EASY.difficulty) {
+                Snackbar.make(difficulty_button_group, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
+                    .show()
+
+                return@setOnClickListener
+            }
+
             listener?.onFragmentInteraction(STEP)
+        }
+
+        difficulty_button_group.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                when (checkedId) {
+                    R.id.button_easy -> difficulty = Difficulty.EASY.difficulty
+                    R.id.button_medium -> difficulty = Difficulty.MEDIUM.difficulty
+                    R.id.button_difficult -> difficulty = Difficulty.DIFFICULT.difficulty
+                }
+
+                listener?.setDifficultySelection(difficulty)
+            }
+        }
+
+        when (difficulty) {
+            Difficulty.EASY.difficulty -> difficulty_button_group.check(R.id.button_easy)
+            Difficulty.MEDIUM.difficulty -> difficulty_button_group.check(R.id.button_medium)
+            Difficulty.DIFFICULT.difficulty -> difficulty_button_group.check(R.id.button_difficult)
         }
     }
 
@@ -62,21 +86,11 @@ class ExploreDifficultyFragment : Fragment() {
     companion object {
         val STEP = "Difficulty"
 
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ExploreCategoryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String?, param2: String?) =
+        fun newInstance(difficulty: String?) =
             ExploreDifficultyFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_DIFFICULTY, difficulty)
                 }
             }
     }
