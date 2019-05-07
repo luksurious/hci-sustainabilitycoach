@@ -59,7 +59,7 @@ class ExploreCategoryFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            listener?.setCategorySelection(activeCategories.toString())
+            listener?.setCategorySelection(activeCategories.joinToString())
             listener?.onFragmentInteraction(STEP)
         }
 
