@@ -40,10 +40,10 @@ class HomeActivity : AppCompatActivity() {
         false
     }
 
-    private fun setupHomeTab() {
+    private fun setupHomeTab(addToBack: Boolean = true) {
         appToolbar.title = resources.getString(R.string.app_name)
 
-        openFragment(HomeFragment.newInstance())
+        openFragment(HomeFragment.newInstance(), addToBack)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,13 +54,15 @@ class HomeActivity : AppCompatActivity() {
 
         nav_view.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        setupHomeTab()
+        setupHomeTab(false)
     }
 
-    private fun openFragment(fragment: Fragment) {
+    private fun openFragment(fragment: Fragment, addToBack: Boolean = true) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
-        transaction.addToBackStack(null)
+        if (addToBack) {
+            transaction.addToBackStack(null)
+        }
         transaction.commit()
     }
 }
