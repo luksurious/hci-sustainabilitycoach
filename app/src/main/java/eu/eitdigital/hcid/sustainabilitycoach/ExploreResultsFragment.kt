@@ -38,8 +38,6 @@ class ExploreResultsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        textView2.text = "Selection: \nCategory: $category\nDifficulty: $difficulty"
     }
 
     override fun onAttach(context: Context) {
