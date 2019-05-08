@@ -6,4 +6,6 @@
     <color name="colorSecondary">#03DAC6</color>
     <color name="colorLight">#FFFFFF</color>
     <color name="colorDarkGreen">#00B6A4</color>
+    <color name="backgroundColour">#F1F5F8</color>
+
 </resources>
