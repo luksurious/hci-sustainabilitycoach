@@ -7,10 +7,11 @@
     tools:context=".ExploreActivity">
 
     <ImageView
-            android:layout_width="417dp"
-            android:layout_height="303dp" app:srcCompat="@drawable/ic_launcher_background"
-            android:id="@+id/imageBackground" tools:layout_editor_absoluteY="-2dp"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_width="413dp"
+            android:layout_height="250dp" app:srcCompat="@drawable/cowbig"
+            android:id="@+id/imageBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:contentDescription="Reduce meat consumption image"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"

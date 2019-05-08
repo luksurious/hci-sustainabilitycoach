@@ -1,3 +1,5 @@
+
+/*
 package eu.eitdigital.hcid.sustainabilitycoach
 
 import android.os.Bundle
@@ -14,3 +16,4 @@ class DetailsDialog : DialogFragment(), AppCompatActivity(), ExploreFragmentInte
     }
 
 }
+*/
