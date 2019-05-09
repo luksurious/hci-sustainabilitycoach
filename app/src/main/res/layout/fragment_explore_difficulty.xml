@@ -16,7 +16,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/explore_difficulty_text"
-        android:textSize="18sp"
+        style="@style/AppTheme.ViewHeading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

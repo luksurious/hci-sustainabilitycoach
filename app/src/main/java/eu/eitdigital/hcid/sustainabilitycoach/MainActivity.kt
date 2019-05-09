@@ -1,5 +1,6 @@
 package eu.eitdigital.hcid.sustainabilitycoach
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -8,6 +9,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
+import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_main.*
 
@@ -53,7 +55,9 @@ class MainActivity : AppCompatActivity() {
                 setupHomeTab()
             }
             R.id.nav_plan_habit -> {
-
+                Intent(this, PlanActivity::class.java).apply {
+                    startActivity(this)
+                }
             }
             R.id.nav_start_planned -> {
 

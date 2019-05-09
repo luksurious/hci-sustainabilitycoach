@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/plan_schedule"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".plan.ui.PlanScheduleFragment">
+
+    <TextView
+        android:id="@+id/message"
+        style="@style/AppTheme.ViewHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/plan_level_title_meat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@android:style/Widget.Material.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:indeterminate="false"
+        android:max="6"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="26dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar">
+
+        <TextView
+            android:id="@+id/plan_weekly_text_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/plan_weekly_text_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="2"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/plan_weekly_text_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="3"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/plan_weekly_text_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="4"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/plan_weekly_text_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/plan_weekly_text_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="6"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/plan_weekly_text_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="7"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="time(s) per week"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_button"
+        android:layout_width="109dp"
+        android:layout_height="59dp"
+        android:text="@string/explore_button_next"
+        android:textSize="18sp"
+        android:layout_marginEnd="32dp"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

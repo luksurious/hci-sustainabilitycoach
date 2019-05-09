@@ -31,5 +31,10 @@
     <string name="category_household">Household</string>
     <string name="category_transportation">Transportation</string>
     <string name="explore_button_skip">Skip</string>
+    <string name="plan_title">Plan habit</string>
+    <string name="plan_level_title_meat">How often do you want to stop eating meat per week?</string>
+    <string name="plan_notification_title">When do you want your coach to remind you?</string>
+    <string name="plan_activate_button">Activate the coach!</string>
+    <string name="plan_success_title">Coach is activated!</string>
 
 </resources>

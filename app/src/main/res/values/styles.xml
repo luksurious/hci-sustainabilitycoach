@@ -31,4 +31,41 @@
     <style name="AppTheme.MaterialButton.Text" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@color/grey</item>
     </style>
+
+    <style name="AppTheme.ViewHeading" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="AppTheme.SeekSelected">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.SeekUnselected" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="AppTheme.CompactMultiButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/colorLight</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+        <!--<item name="android:windowEnterAnimation">@anim/slide_up</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/slide_down</item>-->
+    </style>
 </resources>
