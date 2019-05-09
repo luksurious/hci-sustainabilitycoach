@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   tools:context=".ExploreResultsFragment"
-                                                   android:backgroundTint="@color/backgroundColour"
-                                                   android:background="#F1F5F8">
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".ExploreResultsFragment"
+        android:backgroundTint="@color/backgroundColour"
+        android:background="#F1F5F8">
     <ScrollView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent">
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
             <TextView
                     android:text="Recommendations for you"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView9"
-                    android:textSize="26sp"
+                    android:textSize="22sp"
                     android:fontFamily="sans-serif-medium"/>
 
             <com.google.android.material.card.MaterialCardView
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="20dp"
                     app:cardUseCompatPadding="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="2dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-                android:id="@+id/OrganicCard">
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/OrganicCard">
 
                 <ImageView
                         android:src="@drawable/organic"
-                        android:layout_margin="0dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/imageOrganicFood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageOrganicFood"
                         android:contentDescription="Buy organic image"/>
 
                 <TextView
@@ -52,7 +55,7 @@
                         android:layout_marginTop="140dp"
                         android:layout_marginLeft="20dp"
                         android:layout_height="43dp" android:id="@+id/textOrganicFood" android:typeface="sans"
-                        android:textSize="24sp" android:textStyle="bold"/>
+                        android:textSize="20sp" android:textStyle="bold"/>
 
                 <ImageView
                         android:src="@drawable/ic_apple"
@@ -67,7 +70,7 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="45dp"
                         android:layout_height="wrap_content" android:id="@+id/textCategory"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 <ImageView
                         android:src="@drawable/ic_difficulty"
                         android:layout_width="20dp"
@@ -81,7 +84,7 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="135dp"
                         android:layout_height="wrap_content" android:id="@+id/textDifficulty"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 <ImageView
                         android:src="@drawable/ic_leaf"
                         android:layout_width="20dp"
@@ -95,29 +98,27 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="220dp"
                         android:layout_height="wrap_content" android:id="@+id/textImpact"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
 
 
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/MeatCard"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="25dp"
-                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="25dp"
-                    app:layout_constraintHorizontal_bias="0.485"
-                    android:layout_marginTop="8dp" android:layout_marginBottom="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:cardUseCompatPadding="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="2dp"
-                    app:layout_constraintVertical_bias="0.077">>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/MeatCard">
 
                 <ImageView
                         android:src="@drawable/cow"
                         android:layout_margin="0dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/imageMeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageMeat"
                         android:contentDescription="Reduce meat consumtion image"/>
                 <TextView
                         android:text="Reduce meat consumption"
@@ -125,7 +126,7 @@
                         android:layout_marginTop="140dp"
                         android:layout_marginLeft="20dp"
                         android:layout_height="43dp" android:id="@+id/textMeat" android:typeface="sans"
-                        android:textSize="24sp" android:textStyle="bold"/>
+                        android:textSize="20sp" android:textStyle="bold"/>
                 <ImageView
                         android:src="@drawable/ic_apple"
                         android:layout_width="20dp"
@@ -139,7 +140,7 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="45dp"
                         android:layout_height="wrap_content" android:id="@+id/textCategory2"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 <ImageView
                         android:src="@drawable/ic_difficulty"
                         android:layout_width="20dp"
@@ -153,7 +154,7 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="135dp"
                         android:layout_height="wrap_content" android:id="@+id/textDifficulty2"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 <ImageView
                         android:src="@drawable/ic_leaf"
                         android:layout_width="20dp"
@@ -167,25 +168,24 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="220dp"
                         android:layout_height="wrap_content" android:id="@+id/textImpact2"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
 
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/WasteCard"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginBottom="8dp"
                     app:cardUseCompatPadding="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="2dp"
-            >
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/WasteCard">
 
                 <ImageView
                         android:src="@drawable/waste"
                         android:layout_margin="0dp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/imageWaste"
                         android:contentDescription="Reduce waste image"/>
                 <TextView
@@ -194,7 +194,7 @@
                         android:layout_marginTop="140dp"
                         android:layout_marginLeft="20dp"
                         android:layout_height="45dp" android:id="@+id/textWaste" android:typeface="sans"
-                        android:textSize="24sp" android:textStyle="bold"/>
+                        android:textSize="20sp" android:textStyle="bold"/>
                 <ImageView
                         android:src="@drawable/ic_apple"
                         android:layout_width="20dp"
@@ -208,7 +208,7 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="45dp"
                         android:layout_height="wrap_content" android:id="@+id/textCategory3"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 <ImageView
                         android:src="@drawable/ic_difficulty"
                         android:layout_width="20dp"
@@ -222,7 +222,7 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="135dp"
                         android:layout_height="wrap_content" android:id="@+id/textDifficulty3"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 <ImageView
                         android:src="@drawable/ic_leaf"
                         android:layout_width="20dp"
@@ -236,7 +236,7 @@
                         android:layout_marginTop="185dp"
                         android:layout_marginLeft="220dp"
                         android:layout_height="wrap_content" android:id="@+id/textImpact3"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
 
 
             </com.google.android.material.card.MaterialCardView>
@@ -246,27 +246,28 @@
                     android:layout_marginTop="20dp"
                     android:layout_height="wrap_content" android:id="@+id/textChangeFilters"
                     android:textAlignment="center" android:textSize="18sp" android:fontFamily="sans-serif-medium"/>
-            <Button
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    >
+                <Button
                     android:id="@+id/buttonChangeFilters"
                     android:text="CHANGE FILTERS"
                     android:layout_width="200dp"
                     android:layout_height="59dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:layout_marginStart="105dp"
-                    android:layout_marginEnd="100dp"
                     android:background="#FFFFFF"
                     android:backgroundTint="@color/colorAccent"
                     android:textSize="18sp"
                     app:cornerRadius="30dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2"
-                    app:layout_constraintVertical_bias="0.793"/>
+                    />
 
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
