@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import eu.eitdigital.hcid.sustainabilitycoach.explore.ExploreActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment() : Fragment() {

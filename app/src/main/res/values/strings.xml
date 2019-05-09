@@ -23,5 +23,13 @@
     <string name="menu_start_after_twoweeks">Start (after two weeks)</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_medium">Medium</string>
+    <string name="difficulty_difficult">Difficult</string>
+    <string name="category_consumption">Consumption</string>
+    <string name="category_food">Food</string>
+    <string name="category_household">Household</string>
+    <string name="category_transportation">Transportation</string>
+    <string name="explore_button_skip">Skip</string>
 
 </resources>

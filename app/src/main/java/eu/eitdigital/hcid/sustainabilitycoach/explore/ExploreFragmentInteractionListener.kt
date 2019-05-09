@@ -1,4 +1,4 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 /**
  * This interface must be implemented by activities that contain this
@@ -19,4 +19,6 @@ interface ExploreFragmentInteractionListener {
     fun setDifficultySelection(difficulty: String)
 
     fun goBackToCategorySelection()
+
+    fun showUnsupportedActionMessage()
 }

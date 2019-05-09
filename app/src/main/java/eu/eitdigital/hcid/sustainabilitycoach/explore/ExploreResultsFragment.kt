@@ -1,12 +1,12 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_explore_results.*
 
 

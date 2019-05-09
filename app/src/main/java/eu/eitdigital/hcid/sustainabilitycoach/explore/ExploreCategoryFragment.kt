@@ -1,4 +1,4 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 import android.content.Context
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.snackbar.Snackbar
+import eu.eitdigital.hcid.sustainabilitycoach.R
+import eu.eitdigital.hcid.sustainabilitycoach.model.Category
 import kotlinx.android.synthetic.main.fragment_explore_category.*
 
 private const val ARG_CATEGORY = "category"
@@ -53,8 +55,7 @@ class ExploreCategoryFragment : Fragment() {
 
         next_button.setOnClickListener {
             if (activeCategories.size != 1 || !activeCategories.contains(Category.FOOD.category)) {
-                Snackbar.make(card_category_food, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
-                    .show()
+                listener?.showUnsupportedActionMessage()
 
                 return@setOnClickListener
             }
@@ -66,6 +67,8 @@ class ExploreCategoryFragment : Fragment() {
         if (activeCategories.size == 0) {
             next_button.isEnabled = false
         }
+
+        skip_button.setOnClickListener { listener?.showUnsupportedActionMessage() }
     }
 
     private fun toggleCategorySelection(category: Category, card: MaterialCardView) {

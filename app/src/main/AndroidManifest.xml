@@ -22,7 +22,7 @@
         </activity>
 
         <activity
-            android:name=".ExploreActivity"
+            android:name=".explore.ExploreActivity"
             android:parentActivityName=".MainActivity" />
     </application>
 

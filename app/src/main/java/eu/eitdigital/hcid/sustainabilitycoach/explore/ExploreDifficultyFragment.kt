@@ -1,4 +1,4 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
+import eu.eitdigital.hcid.sustainabilitycoach.R
+import eu.eitdigital.hcid.sustainabilitycoach.model.Difficulty
 import kotlinx.android.synthetic.main.fragment_explore_difficulty.*
 import kotlinx.android.synthetic.main.fragment_explore_difficulty.next_button
 
@@ -67,6 +69,8 @@ class ExploreDifficultyFragment : Fragment() {
             Difficulty.MEDIUM.difficulty -> difficulty_button_group.check(R.id.button_medium)
             Difficulty.DIFFICULT.difficulty -> difficulty_button_group.check(R.id.button_difficult)
         }
+
+        skip_button.setOnClickListener { listener?.showUnsupportedActionMessage() }
     }
 
     override fun onAttach(context: Context) {

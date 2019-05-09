@@ -1,16 +1,23 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.explore
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.core.app.NavUtils
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
+import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
+import eu.eitdigital.hcid.sustainabilitycoach.R
+import eu.eitdigital.hcid.sustainabilitycoach.model.ExploreFilters
 import kotlinx.android.synthetic.main.activity_explore.*
 
-class ExploreActivity : AppCompatActivity(), ExploreFragmentInteractionListener {
+class ExploreActivity : AppCompatActivity(),
+    ExploreFragmentInteractionListener {
 
-    var filters: ExploreFilters = ExploreFilters("", "")
+    var filters: ExploreFilters =
+        ExploreFilters("", "")
 
     var state: String = ""
 
@@ -26,15 +33,25 @@ class ExploreActivity : AppCompatActivity(), ExploreFragmentInteractionListener 
     }
 
     private fun showCategorySelection(addToStack: Boolean = true) {
-        openFragment(ExploreCategoryFragment.newInstance(filters.category), addToStack)
+        openFragment(
+            ExploreCategoryFragment.newInstance(
+                filters.category
+            ), addToStack)
     }
     private fun showDifficultySelection(addToStack: Boolean = true) {
         state = ExploreDifficultyFragment.STEP
-        openFragment(ExploreDifficultyFragment.newInstance(filters.difficulty), addToStack)
+        openFragment(
+            ExploreDifficultyFragment.newInstance(
+                filters.difficulty
+            ), addToStack)
     }
     private fun showResultsSelection(addToStack: Boolean = true) {
         state = ExploreResultsFragment.STEP
-        openFragment(ExploreResultsFragment.newInstance(filters.category, filters.difficulty), addToStack)
+        openFragment(
+            ExploreResultsFragment.newInstance(
+                filters.category,
+                filters.difficulty
+            ), addToStack)
     }
 
     private fun openFragment(fragment: Fragment, addToBackStack: Boolean = true) {
@@ -57,6 +74,11 @@ class ExploreActivity : AppCompatActivity(), ExploreFragmentInteractionListener 
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.explore_options, menu)
+        return true
+    }
+
     override fun goBackToCategorySelection() {
         // TODO: does this work in any scenario/flow;
         //  is there a state where you enter results without coming from the selection process?
@@ -73,6 +95,11 @@ class ExploreActivity : AppCompatActivity(), ExploreFragmentInteractionListener 
 
                 return true
             }
+            R.id.explore_cancel -> {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -83,4 +110,10 @@ class ExploreActivity : AppCompatActivity(), ExploreFragmentInteractionListener 
     override fun setDifficultySelection(difficulty: String) {
         filters.difficulty = difficulty
     }
+
+    override fun showUnsupportedActionMessage() {
+        Snackbar.make(fragment_container, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
+            .show()
+    }
+
 }

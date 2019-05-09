@@ -1,4 +1,4 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.model
 
 enum class Category(val category: String) {
     FOOD("Food"),

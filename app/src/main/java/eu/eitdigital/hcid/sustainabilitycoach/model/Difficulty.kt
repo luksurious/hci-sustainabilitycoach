@@ -1,4 +1,4 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.model
 
 enum class Difficulty(val difficulty: String) {
     EASY("Easy"),
