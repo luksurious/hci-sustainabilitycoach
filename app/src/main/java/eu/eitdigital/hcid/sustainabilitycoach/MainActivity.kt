@@ -8,10 +8,10 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_main.*
 
-class HomeActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private var currentFragment: String? = null
 
@@ -81,10 +81,12 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_main)
 
         setSupportActionBar(appToolbar)
 
+        // TODO: is a drawer good? might users try to use it? instead use menu with hidden option?
+        //  or otherwise make admin only?
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, appToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
