@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_start_new"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/menu_start_new"/>
+        <item
+            android:id="@+id/nav_plan_habit"
+            android:icon="@drawable/ic_spa_black_24dp"
+            android:title="@string/menu_plan_habit"/>
+        <item
+            android:id="@+id/nav_start_planned"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/menu_start_planned"/>
+        <item
+            android:id="@+id/nav_start_fill_dayone"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="@string/menu_start_fill_dayone"/>
+        <item
+            android:id="@+id/nav_start_fill_daytwo"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="@string/menu_start_fill_daytwo"/>
+        <item
+            android:id="@+id/nav_start_after_twoweeks"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="@string/menu_start_after_twoweeks"/>
+    </group>
+
+</menu>

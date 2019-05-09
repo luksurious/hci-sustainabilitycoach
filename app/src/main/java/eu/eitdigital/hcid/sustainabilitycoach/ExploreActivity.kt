@@ -57,10 +57,14 @@ class ExploreActivity : AppCompatActivity(), ExploreFragmentInteractionListener 
         }
     }
 
-    override fun goBackToCategorySelection(origin: String) {
-        when (origin) {
-            ExploreResultsFragment.STEP -> showCategorySelection()
-        }
+    override fun goBackToCategorySelection() {
+        // TODO: does this work in any scenario/flow;
+        //  is there a state where you enter results without coming from the selection process?
+        // remove transition of results -> difficulty selection
+        supportFragmentManager.popBackStack();
+        // remove transition of difficulty -> category selection
+        supportFragmentManager.popBackStack();
+        showCategorySelection(false)
     }
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
