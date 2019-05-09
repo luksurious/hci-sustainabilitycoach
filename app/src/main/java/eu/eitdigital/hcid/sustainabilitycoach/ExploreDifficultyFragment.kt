@@ -50,7 +50,7 @@ class ExploreDifficultyFragment : Fragment() {
             listener?.onFragmentInteraction(STEP)
         }
 
-        difficulty_button_group.addOnButtonCheckedListener { group, checkedId, isChecked ->
+        difficulty_button_group.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked) {
                 when (checkedId) {
                     R.id.button_easy -> difficulty = Difficulty.EASY.difficulty

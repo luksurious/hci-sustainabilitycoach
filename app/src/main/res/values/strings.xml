@@ -12,5 +12,16 @@
     <string name="explore_category_text">Select the area you want to be more sustainable in</string>
     <string name="explore_difficulty_text">Do you want to start easy or take on a real challenge?</string>
     <string name="explore_button_next">Next</string>
+    <string name="nav_header_subtitle">EIT HCID Project</string>
+    <string name="nav_header_title">Sustainability Coach</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="menu_start_new">Start (new user)</string>
+    <string name="menu_plan_habit">Plan habit</string>
+    <string name="menu_start_planned">Start (with planned habit)</string>
+    <string name="menu_start_fill_dayone">Start (fill day one)</string>
+    <string name="menu_start_fill_daytwo">Start (fill day two)</string>
+    <string name="menu_start_after_twoweeks">Start (after two weeks)</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 </resources>

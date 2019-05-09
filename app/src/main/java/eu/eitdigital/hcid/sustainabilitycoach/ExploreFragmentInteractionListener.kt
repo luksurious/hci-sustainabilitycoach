@@ -18,5 +18,5 @@ interface ExploreFragmentInteractionListener {
 
     fun setDifficultySelection(difficulty: String)
 
-    fun goBackToCategorySelection(origin: String)
+    fun goBackToCategorySelection()
 }

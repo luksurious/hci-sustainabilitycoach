@@ -41,7 +41,7 @@ class ExploreResultsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         buttonChangeFilters.setOnClickListener {
-            listener?.goBackToCategorySelection(STEP)
+            listener?.goBackToCategorySelection()
         }
     }
 
