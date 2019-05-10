@@ -36,5 +36,11 @@
     <string name="plan_notification_title">When do you want your coach to remind you?</string>
     <string name="plan_activate_button">Activate the coach!</string>
     <string name="plan_success_title">Coach is activated!</string>
+    <string name="fill_results">Fill Results</string>
+    <string name="achieved">Achieved?</string>
+    <string name="save">Save</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

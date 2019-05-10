@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import eu.eitdigital.hcid.sustainabilitycoach.explore.ExploreActivity
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment() : Fragment() {
@@ -21,6 +22,9 @@ class HomeFragment() : Fragment() {
         start_button.setOnClickListener {
             val intent = Intent(activity, ExploreActivity::class.java)
             startActivity(intent)
+        }
+        fill_results.setOnClickListener {
+            (activity as HomeActivity).openFillResults()
         }
     }
 
