@@ -75,7 +75,7 @@ class ExploreActivity : AppCompatActivity(),
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.explore_options, menu)
+        menuInflater.inflate(R.menu.explore_plan_options, menu)
         return true
     }
 
@@ -88,6 +88,7 @@ class ExploreActivity : AppCompatActivity(),
         supportFragmentManager.popBackStack();
         showCategorySelection(false)
     }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             android.R.id.home -> {
@@ -95,7 +96,7 @@ class ExploreActivity : AppCompatActivity(),
 
                 return true
             }
-            R.id.explore_cancel -> {
+            R.id.explore_plan_cancel -> {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)

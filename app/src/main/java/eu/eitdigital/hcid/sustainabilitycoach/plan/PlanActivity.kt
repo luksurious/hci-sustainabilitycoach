@@ -1,16 +1,26 @@
 package eu.eitdigital.hcid.sustainabilitycoach.plan
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
+import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
+import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
+import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
+import eu.eitdigital.hcid.sustainabilitycoach.plan.ui.PlanCoachInfoDialogFragment
 import eu.eitdigital.hcid.sustainabilitycoach.plan.ui.PlanNotificationFragment
 import eu.eitdigital.hcid.sustainabilitycoach.plan.ui.PlanScheduleFragment
 import eu.eitdigital.hcid.sustainabilitycoach.plan.ui.PlanSuccessDialogFragment
 import kotlinx.android.synthetic.main.plan_activity.*
 
 class PlanActivity : AppCompatActivity(), PlanFragmentInteractionListener {
+
+    private lateinit var preferences: DummyDataModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.plan_activity)
@@ -22,6 +32,8 @@ class PlanActivity : AppCompatActivity(), PlanFragmentInteractionListener {
                 .replace(R.id.fragment_container, PlanScheduleFragment.newInstance())
                 .commitNow()
         }
+
+        preferences = DummyDataModel(getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE));
     }
 
     override fun showNotificationFragment() {
@@ -36,10 +48,15 @@ class PlanActivity : AppCompatActivity(), PlanFragmentInteractionListener {
     }
 
     override fun showCoachInfoDialog() {
-//        TODO("not implemented")
+        val dialog = PlanCoachInfoDialogFragment.newInstance()
+
+        val ft = supportFragmentManager.beginTransaction()
+        dialog.show(ft, PlanCoachInfoDialogFragment.TAG)
     }
 
     override fun finishTaskToDashboard() {
+        preferences.state = DummyDataModel.States.ACTIVE_PLANNED
+
         finish()
     }
 
@@ -59,7 +76,17 @@ class PlanActivity : AppCompatActivity(), PlanFragmentInteractionListener {
 
                 return true
             }
+            R.id.explore_plan_cancel -> {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.explore_plan_options, menu)
+        return true
     }
 }

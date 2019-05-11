@@ -6,16 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
 import androidx.fragment.app.DialogFragment
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanFragmentInteractionListener
 import kotlinx.android.synthetic.main.plan_success_dialog_fragment.*
 
-class PlanSuccessDialogFragment: DialogFragment() {
+class PlanCoachInfoDialogFragment: DialogFragment() {
     companion object {
-        val TAG = "PlanSuccessDialogFragment"
+        val TAG = "PlanCoachInfoDialogFragment"
 
-        fun newInstance() = PlanSuccessDialogFragment()
+        fun newInstance() = PlanCoachInfoDialogFragment()
     }
 
     private var listener: PlanFragmentInteractionListener? = null
@@ -26,16 +27,14 @@ class PlanSuccessDialogFragment: DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.plan_success_dialog_fragment, container, false)
+        return inflater.inflate(R.layout.plan_coach_info_dialog_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         dialogToolbar?.setNavigationIcon(R.drawable.ic_close_white_24dp)
-        dialogToolbar?.setNavigationOnClickListener { listener?.finishTaskToDashboard() }
-
-        finish_button.setOnClickListener { listener?.finishTaskToDashboard() }
+        dialogToolbar?.setNavigationOnClickListener { dialog?.dismiss() }
     }
 
     override fun onStart() {

@@ -11,7 +11,6 @@ import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanFragmentInteractionListener
 import kotlinx.android.synthetic.main.plan_notification_fragment.*
-import kotlinx.android.synthetic.main.plan_schedule_fragment.*
 
 class PlanNotificationFragment : Fragment() {
 
@@ -51,6 +50,10 @@ class PlanNotificationFragment : Fragment() {
             }
 
             listener?.showActivationDialog()
+        }
+
+        learn_coach_button.setOnClickListener {
+            listener?.showCoachInfoDialog()
         }
     }
 

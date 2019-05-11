@@ -43,27 +43,7 @@ class PlanScheduleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        updateSelectedSlideTextStyles(seekBar.progress)
-
-        textViewResources.forEachIndexed { index, textViewId ->
-            val textView = activity?.findViewById<TextView>(textViewId)
-            textView?.isClickable = true
-            textView?.setOnClickListener {
-                seekBar.progress = index
-            }
-        }
-
-        seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                val frequency = progress + 1
-                viewModel.frequency = frequency
-
-                updateSelectedSlideTextStyles(progress)
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-        })
+        setupSeekbarInteraction()
 
         next_button.setOnClickListener {
             if (viewModel.frequency != 3) {
@@ -74,6 +54,34 @@ class PlanScheduleFragment : Fragment() {
 
             listener?.showNotificationFragment()
         }
+
+        learn_coach_button.setOnClickListener {
+            listener?.showCoachInfoDialog()
+        }
+    }
+
+    private fun setupSeekbarInteraction() {
+        updateSelectedSlideTextStyles(seekBar.progress)
+
+        textViewResources.forEachIndexed { index, textViewId ->
+            val textView = activity?.findViewById<TextView>(textViewId)
+            textView?.isClickable = true
+            textView?.setOnClickListener {
+                seekBar.progress = index
+            }
+        }
+
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                val frequency = progress + 1
+                viewModel.frequency = frequency
+
+                updateSelectedSlideTextStyles(progress)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
     }
 
     private fun updateSelectedSlideTextStyles(progress: Int) {

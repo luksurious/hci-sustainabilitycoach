@@ -1,7 +1,10 @@
 package eu.eitdigital.hcid.sustainabilitycoach
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +12,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
+import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
+import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
 import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_main.*
@@ -16,6 +21,17 @@ import kotlinx.android.synthetic.main.layout_main.*
 class MainActivity : AppCompatActivity() {
 
     private var currentFragment: String? = null
+
+    private lateinit var preferences: DummyDataModel
+
+    private var stateFragments: HashMap<DummyDataModel.States, Class<out Fragment>> = hashMapOf(
+        Pair(DummyDataModel.States.NEW, HomeFragment::class.java),
+        Pair(DummyDataModel.States.ACTIVE_UNPLANNED, HomeAfterPlanFragment::class.java),
+        Pair(DummyDataModel.States.ACTIVE_PLANNED, HomeAfterPlanFragment::class.java),
+        Pair(DummyDataModel.States.FAILED_ONCE, Home2Fragment::class.java),
+        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Home2Fragment::class.java),
+        Pair(DummyDataModel.States.AFTER_WEEKS, HomeFragment::class.java)
+    )
 
     private val onBottomNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -52,24 +68,30 @@ class MainActivity : AppCompatActivity() {
     private val onDrawerNavigationItemSelectedListener = NavigationView.OnNavigationItemSelectedListener {
         when (it.itemId) {
             R.id.nav_start_new -> {
-                setupHomeTab()
+                preferences.state = DummyDataModel.States.NEW
+                showFragmentOfState()
             }
             R.id.nav_plan_habit -> {
+                preferences.state = DummyDataModel.States.ACTIVE_UNPLANNED
                 Intent(this, PlanActivity::class.java).apply {
                     startActivity(this)
                 }
             }
             R.id.nav_start_planned -> {
-
+                preferences.state = DummyDataModel.States.ACTIVE_PLANNED
+                showFragmentOfState()
             }
             R.id.nav_start_fill_dayone -> {
-                openFillResults();
+                preferences.state = DummyDataModel.States.ACTIVE_PLANNED
+                showFragmentOfState()
             }
             R.id.nav_start_fill_daytwo -> {
-
+                preferences.state = DummyDataModel.States.FAILED_ONCE
+                showFragmentOfState()
             }
             R.id.nav_start_after_twoweeks -> {
-
+                preferences.state = DummyDataModel.States.AFTER_WEEKS
+                showFragmentOfState()
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -87,6 +109,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        preferences = DummyDataModel(getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE));
+
         setSupportActionBar(appToolbar)
 
         // TODO: is a drawer good? might users try to use it? instead use menu with hidden option?
@@ -101,7 +125,24 @@ class MainActivity : AppCompatActivity() {
 
         nav_view.setOnNavigationItemSelectedListener(onBottomNavigationItemSelectedListener)
 
-        setupHomeTab()
+        showFragmentOfState()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+
+        showFragmentOfState()
+    }
+
+    private fun showFragmentOfState() {
+        val fragment: Fragment? = stateFragments[preferences.state]?.newInstance()
+
+        if (fragment == null) {
+            setupHomeTab()
+        } else {
+            Log.i("STATE", "State is " + preferences.state)
+            openFragment(fragment)
+        }
     }
 
     private fun openFragment(fragment: Fragment, addToBack: Boolean = true) {
@@ -123,7 +164,7 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
-    public fun openFillResults() {
+    fun openFillResults() {
         openFragment(Home2Fragment.newInstance("",""))
     }
 }
