@@ -36,7 +36,7 @@ class HomeFillResults: Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         goButton.setOnClickListener {
-            (activity as HomeActivity).openFillResults()
+            (activity as MainActivity).openFillResults()
         }
     }
 

@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             R.id.nav_start_fill_dayone -> {
-
+                openFillResults();
             }
             R.id.nav_start_fill_daytwo -> {
 
@@ -122,5 +122,8 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onBackPressed()
         }
+    }
+    public fun openFillResults() {
+        openFragment(Home2Fragment.newInstance("",""))
     }
 }
