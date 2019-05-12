@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_explore_results.*
 
@@ -42,6 +43,9 @@ class ExploreResultsFragment : Fragment() {
 
         buttonChangeFilters.setOnClickListener {
             listener?.goBackToCategorySelection()
+        }
+        MeatCard.setOnClickListener{
+            (activity as MainActivity).openDetailsDialog()
         }
     }
 

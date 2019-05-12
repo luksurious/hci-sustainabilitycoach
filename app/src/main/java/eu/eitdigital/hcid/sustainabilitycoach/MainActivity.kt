@@ -167,4 +167,8 @@ class MainActivity : AppCompatActivity() {
     fun openFillResults() {
         openFragment(Home2Fragment.newInstance("",""))
     }
+
+    fun openDetailsDialog() {
+        openFragment(DetailsDialog.newInstance(""))
+    }
 }
