@@ -22,12 +22,15 @@ package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import eu.eitdigital.hcid.sustainabilitycoach.R
+import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
+import kotlinx.android.synthetic.main.activity_details_dialog.*
 import kotlinx.android.synthetic.main.plan_success_dialog_fragment.*
 
 class ExploreDetailsDialog: DialogFragment() {
@@ -52,7 +55,12 @@ class ExploreDetailsDialog: DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         dialogToolbar?.setNavigationIcon(R.drawable.ic_close_white_24dp)
+        dialogToolbar?.setNavigationOnClickListener { dialog?.dismiss() }
 
+        button_start_habit.setOnClickListener {
+            val intent = Intent(activity, PlanActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
