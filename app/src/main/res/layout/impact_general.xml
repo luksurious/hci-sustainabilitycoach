@@ -3,14 +3,10 @@
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:background="#E91E63">
+              android:layout_height="wrap_content" android:background="#E91E63">
     <androidx.viewpager.widget.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
     </androidx.viewpager.widget.ViewPager>
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="430dp" tools:srcCompat="@drawable/co2"
-            android:id="@+id/imageView" android:background="#FFEB3B"/>
 </LinearLayout>
