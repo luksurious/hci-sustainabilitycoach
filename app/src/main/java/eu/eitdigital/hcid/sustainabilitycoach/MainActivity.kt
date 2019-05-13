@@ -12,6 +12,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
+import eu.eitdigital.hcid.sustainabilitycoach.explore.ExploreDetailsDialog
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
 import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
@@ -166,9 +167,5 @@ class MainActivity : AppCompatActivity() {
     }
     fun openFillResults() {
         openFragment(Home2Fragment.newInstance("",""))
-    }
-
-    fun openDetailsDialog() {
-        openFragment(DetailsDialog.newInstance(""))
     }
 }

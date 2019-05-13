@@ -21,4 +21,7 @@ interface ExploreFragmentInteractionListener {
     fun goBackToCategorySelection()
 
     fun showUnsupportedActionMessage()
+
+    fun showDetailsDialog()
+
 }

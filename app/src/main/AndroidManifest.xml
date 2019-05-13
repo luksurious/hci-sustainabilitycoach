@@ -25,9 +25,16 @@
         <activity
                 android:name=".explore.ExploreActivity"
                 android:parentActivityName=".MainActivity" />
+
+        <!-- ONLY WHEN I USE IT AS ACTIVITY
+        <activity
+                android:name=".explore.ExploreDetailsDialog"
+                android:parentActivityName=".MainActivity" />
+        -->
         <activity
             android:name=".plan.PlanActivity"
             android:parentActivityName=".MainActivity"/>
+
     </application>
 
 </manifest>

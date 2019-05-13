@@ -1,14 +1,18 @@
 package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_explore_results.*
+import kotlinx.android.synthetic.main.home_fragment.*
+import kotlinx.android.synthetic.main.plan_notification_fragment.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,9 +48,30 @@ class ExploreResultsFragment : Fragment() {
         buttonChangeFilters.setOnClickListener {
             listener?.goBackToCategorySelection()
         }
+        /*
         MeatCard.setOnClickListener{
             (activity as MainActivity).openDetailsDialog()
         }
+        */
+        /* THE ONE WORKING AS EXPLORE DETAILS DIALOG AS AN ACTIVITY
+        MeatCard.setOnClickListener {
+            val intent = Intent(activity, ExploreDetailsDialog::class.java)
+            startActivity(intent)
+        }
+        */
+
+        MeatCard.setOnClickListener {
+            listener?.showDetailsDialog()
+        }
+
+        /*
+        MeatCard.setOnClickListener {
+            fun onClick(v: View) {
+                // When button is clicked, call up to owning activity.
+                (activity as ExploreDetailsDialog).getDialog()
+            }
+        }
+        */
     }
 
     override fun onAttach(context: Context) {

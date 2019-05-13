@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import eu.eitdigital.hcid.sustainabilitycoach.model.ExploreFilters
+import eu.eitdigital.hcid.sustainabilitycoach.plan.ui.PlanCoachInfoDialogFragment
 import kotlinx.android.synthetic.main.activity_explore.*
 
 class ExploreActivity : AppCompatActivity(),
@@ -115,6 +116,13 @@ class ExploreActivity : AppCompatActivity(),
     override fun showUnsupportedActionMessage() {
         Snackbar.make(fragment_container, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
             .show()
+    }
+
+    override fun showDetailsDialog() {
+        val dialog = ExploreDetailsDialog.newInstance()
+
+        val ft = supportFragmentManager.beginTransaction()
+        dialog.show(ft, ExploreDetailsDialog.TAG)
     }
 
 }
