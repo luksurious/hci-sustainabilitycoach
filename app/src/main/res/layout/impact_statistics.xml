@@ -10,5 +10,6 @@
             android:layout_marginLeft="148dp"
             android:layout_marginTop="108dp"
             android:text="Stats" android:layout_height="1dp"/>
+
 </LinearLayout>
 
