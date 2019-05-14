@@ -68,6 +68,50 @@
                         android:layout_marginBottom="24dp"
                         android:textStyle="bold"
                         android:textAlignment="center"/>
+
+                <ImageView
+                        android:src="@drawable/ic_apple"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/apple2"/>
+                <TextView
+                        android:text="Food"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_height="wrap_content" android:id="@+id/textCategory2"
+                        android:textSize="18sp"/>
+                <ImageView
+                        android:src="@drawable/ic_difficulty"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginLeft="135dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/difficulty2"/>
+                <TextView
+                        android:text="Easy"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginLeft="165dp"
+                        android:layout_height="wrap_content" android:id="@+id/textDifficulty2"
+                        android:textSize="18sp"/>
+                <ImageView
+                        android:src="@drawable/ic_leaf"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginLeft="235dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/impact2"/>
+                <TextView
+                        android:text="Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginLeft="265dp"
+                        android:layout_height="wrap_content" android:id="@+id/textImpact2"
+                        android:textSize="18sp"/>
+
                 <Button
                         android:text="Start Habit"
                         android:layout_width="wrap_content"
@@ -94,13 +138,13 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_gravity="right"
                     android:textSize="18sp"
                     app:layout_constraintTop_toTopOf="@id/imageBackground"
                     app:layout_constraintStart_toStartOf="@id/imageBackground"
                     app:layout_constraintEnd_toEndOf="@id/imageBackground"
                     app:layout_constraintBottom_toBottomOf="@id/imageBackground"
-            />
+                    app:layout_constraintHorizontal_bias="0.95"
+                    app:layout_constraintVertical_bias="0.05"/>
 
             <TextView
                     android:text="This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity."
