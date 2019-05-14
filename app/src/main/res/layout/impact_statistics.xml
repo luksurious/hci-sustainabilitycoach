@@ -1,15 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:background="#F1F5F8">
 
-    <TextView
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="148dp"
-            android:layout_marginTop="108dp"
-            android:text="Stats" android:layout_height="1dp"/>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/graph"
+                    android:layout_marginTop="16dp"
+                    android:id="@+id/graph"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:id="@+id/text_graph_description"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Average percentage of successfully performed habits"
+                    android:textAlignment="center"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:id="@+id/text_sucess_rate"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="#222222"
+                    android:text="Success rate by habit"
+            />
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_impact_card1"
+                    android:id="@+id/imageView3"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-40dp"
+                    app:srcCompat="@drawable/ic_impact_card2"
+                    android:id="@+id/imageView4"/>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
 
