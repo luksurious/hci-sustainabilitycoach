@@ -15,6 +15,7 @@ import com.google.android.material.navigation.NavigationView
 import eu.eitdigital.hcid.sustainabilitycoach.explore.ExploreDetailsDialog
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
+import eu.eitdigital.hcid.sustainabilitycoach.plan.Home3Fragment
 import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_main.*
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         Pair(DummyDataModel.States.ACTIVE_UNPLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.ACTIVE_PLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.FAILED_ONCE, Home2Fragment::class.java),
-        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Home2Fragment::class.java),
+        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Home3Fragment::class.java),
         Pair(DummyDataModel.States.AFTER_WEEKS, HomeFragment::class.java)
     )
 
@@ -167,5 +168,9 @@ class MainActivity : AppCompatActivity() {
     }
     fun openFillResults() {
         openFragment(Home2Fragment.newInstance("",""))
+    }
+    private fun openFillResults2() {
+        appToolbar.title = resources.getString(R.string.app_name)
+        openFragment(Home3Fragment.newInstance("",""))
     }
 }
