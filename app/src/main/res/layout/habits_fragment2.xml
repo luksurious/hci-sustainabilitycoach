@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:id="@+id/explore_results"
+        tools:context=".explore.ExploreResultsFragment"
+        android:backgroundTint="@color/backgroundColour"
+        android:background="#F1F5F8">
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_margin="24dp"
+                    android:layout_height="250dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/MeatCard">
+
+                <ImageView
+                        android:src="@drawable/cow"
+                        android:layout_margin="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageMeat"
+                        android:contentDescription="Reduce meat consumtion image"/>
+                <TextView
+                        android:text="Reduce meat consumption"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="43dp" android:id="@+id/textMeat" android:typeface="sans"
+                        android:textSize="20sp" android:textStyle="bold"/>
+                <ImageView
+                        android:src="@drawable/ic_apple"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/apple2"/>
+                <TextView
+                        android:text="Food"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="45dp"
+                        android:layout_height="wrap_content" android:id="@+id/textCategory2"
+                        android:textSize="14sp"/>
+                <ImageView
+                        android:src="@drawable/ic_difficulty"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="110dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/difficulty2"/>
+                <TextView
+                        android:text="Easy"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="135dp"
+                        android:layout_height="wrap_content" android:id="@+id/textDifficulty2"
+                        android:textSize="14sp"/>
+                <ImageView
+                        android:src="@drawable/ic_leaf"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="195dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/impact2"/>
+                <TextView
+                        android:text="Medium impact"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="220dp"
+                        android:layout_height="wrap_content" android:id="@+id/textImpact2"
+                        android:textSize="14sp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>
