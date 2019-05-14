@@ -147,7 +147,7 @@
                     app:layout_constraintVertical_bias="0.05"/>
 
             <TextView
-                    android:text="This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity."
+                    android:text="This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity.This is the detailed text of the activity."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView5"

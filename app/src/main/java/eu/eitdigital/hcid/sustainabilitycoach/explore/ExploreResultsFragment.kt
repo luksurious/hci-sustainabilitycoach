@@ -8,12 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_explore_results.*
-import kotlinx.android.synthetic.main.home_fragment.*
-import kotlinx.android.synthetic.main.plan_notification_fragment.*
-
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,6 +61,20 @@ class ExploreResultsFragment : Fragment() {
         MeatCard.setOnClickListener {
             listener?.showDetailsDialog()
         }
+
+        OrganicCard.setOnClickListener {
+            Snackbar.make(explore_results, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
+                .show()
+            return@setOnClickListener
+        }
+
+        WasteCard.setOnClickListener {
+            Snackbar.make(explore_results, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
+                .show()
+            return@setOnClickListener
+        }
+
+
 
         /*
         MeatCard.setOnClickListener {

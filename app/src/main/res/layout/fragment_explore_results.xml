@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent"
+        android:id="@+id/explore_results"
         tools:context=".explore.ExploreResultsFragment"
         android:backgroundTint="@color/backgroundColour"
         android:background="#F1F5F8">

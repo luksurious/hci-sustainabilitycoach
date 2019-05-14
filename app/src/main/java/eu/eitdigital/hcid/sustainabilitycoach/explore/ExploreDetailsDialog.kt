@@ -54,8 +54,14 @@ class ExploreDetailsDialog: DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*
         dialogToolbar?.setNavigationIcon(R.drawable.ic_close_white_24dp)
         dialogToolbar?.setNavigationOnClickListener { dialog?.dismiss() }
+        */
+
+        imageClose.setOnClickListener{
+            dialog?.dismiss()
+        }
 
         button_start_habit.setOnClickListener {
             val intent = Intent(activity, PlanActivity::class.java)
