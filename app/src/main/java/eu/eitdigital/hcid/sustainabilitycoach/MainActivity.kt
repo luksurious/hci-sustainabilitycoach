@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         Pair(DummyDataModel.States.ACTIVE_UNPLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.ACTIVE_PLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.FAILED_ONCE, Home2Fragment::class.java),
-        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Home3Fragment::class.java),
+        Pair(DummyDataModel.States.SUCCEEDED_ONCE, HomeFragment::class.java),
         Pair(DummyDataModel.States.AFTER_WEEKS, HomeFragment::class.java)
     )
 
