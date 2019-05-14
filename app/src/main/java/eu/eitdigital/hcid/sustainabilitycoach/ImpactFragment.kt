@@ -97,23 +97,28 @@ class ImpactHistoryFragment: Fragment() {
         chart.getLegend().setEnabled(false)
 
         val y = chart.axisLeft
-        y.setLabelCount(6, false)
-        y.textColor = Color.WHITE
-        y.setPosition(YAxis.YAxisLabelPosition.INSIDE_CHART)
+        y.setLabelCount(3, false)
+        y.textColor = Color.BLACK
+        y.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART)
         y.setDrawGridLines(false)
-        y.axisLineColor = Color.WHITE
+        y.axisLineColor = Color.BLACK
+
+        val yright = chart.axisRight
+        yright.textColor = Color.WHITE
+
 
         val entries = ArrayList<Entry>()
-        val values:Array<Float> = arrayOf(0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F)
-        for (i in 0..14) {
+        val values:Array<Float> = arrayOf(0.0F, 3.0F, 6.0F, 4.0F, 0.0F, 0.0F, 0.0F)
+        for (i in 0..3) {
             entries.add(Entry((i).toFloat(), values[i]))
         }
-        val dataSet = LineDataSet(entries, "Volume of water saved")
+
+        val dataSet = LineDataSet(entries, "Number of tasks performed per week")
         dataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER)
         dataSet.setCubicIntensity(0.2f)
         dataSet.setDrawFilled(true)
         dataSet.setDrawCircles(false)
-        dataSet.setLineWidth(1.8f)
+        dataSet.setLineWidth(2.0f)
         dataSet.setCircleRadius(4f)
         dataSet.setCircleColor(Color.WHITE)
         dataSet.setDrawValues(false)
