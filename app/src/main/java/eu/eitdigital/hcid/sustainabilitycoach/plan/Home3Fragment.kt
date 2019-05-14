@@ -1,4 +1,4 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.plan
 
 import android.content.Context
 import android.content.Intent
@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_home2.*
+import kotlinx.android.synthetic.main.fragment_home3.*
 
 
+import eu.eitdigital.hcid.sustainabilitycoach.R
+import kotlinx.android.synthetic.main.fragment_home3.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,23 +22,23 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [Home2Fragment.OnFragmentInteractionListener] interface
+ * [Home3Fragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [Home2Fragment.newInstance] factory method to
+ * Use the [Home3Fragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class Home2Fragment : Fragment() {
+class Home3Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
-    //private var param2: String? = null
-    private var listener: Context? = null
+    private var param2: String? = null
+    private var listener:  Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
-            //param2 = it.getString(ARG_PARAM2)
+            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -45,25 +47,29 @@ class Home2Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home2, container, false)
+        return inflater.inflate(R.layout.fragment_home3, container, false)
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    fun onButtonPressed(uri: Uri) {
+       // listener?.onFragmentInteraction(uri)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fillResults.setOnClickListener {
+        /*fillResultsDay2.setOnClickListener {
             val intent = Intent(activity, FillResultsActivity::class.java)
             startActivity(intent)
-        }
+        }*/
     }
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-      //  listener?.onFragmentInteraction(uri)
-    }
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         listener = context
-
+      /*  if (context is OnFragmentInteractionListener) {
+            listener = context
+        } else {
+            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+        }*/
     }
 
     override fun onDetach() {
@@ -82,10 +88,10 @@ class Home2Fragment : Fragment() {
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-    /*interface OnFragmentInteractionListener {
+    interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
-    }*/
+    }
 
     companion object {
         /**
@@ -94,12 +100,12 @@ class Home2Fragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Home2Fragment.
+         * @return A new instance of fragment Home3Fragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Home2Fragment().apply {
+            Home3Fragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
