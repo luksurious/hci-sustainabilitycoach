@@ -27,7 +27,7 @@
                             android:layout_height="wrap_content" tools:srcCompat="@drawable/factory"
                             android:id="@+id/imageView2" android:background="#00BCD4"/>
                     <TextView
-                            android:text="230 showers of 8'"
+                            android:text="2.4 Madrid/Moscou by car"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="24sp"
                             android:textColor="#141418" android:textAlignment="center" android:paddingLeft="10dp"
@@ -39,7 +39,7 @@
                             android:fontFamily="@font/montserrat" android:textAlignment="center"
                             android:paddingLeft="10dp"
                             android:paddingTop="4dp" android:paddingRight="10dp" android:paddingBottom="16dp"
-                            android:text="15,000 L of water saved"/>
+                            android:text="1 ton of CO2 gasses saved"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <TextView

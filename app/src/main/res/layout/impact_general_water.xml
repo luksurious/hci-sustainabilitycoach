@@ -27,7 +27,7 @@
                             android:layout_height="wrap_content" tools:srcCompat="@drawable/water"
                             android:id="@+id/imageView2" android:background="#00BCD4"/>
                     <TextView
-                            android:text="2.4 Madrid/Moscou by car"
+                            android:text="230 showers of 8'"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="24sp"
                             android:textColor="#141418" android:textAlignment="center" android:paddingLeft="10dp"

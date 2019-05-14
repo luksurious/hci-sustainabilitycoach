@@ -39,7 +39,7 @@
                         android:fontFamily="@font/montserrat" android:textAlignment="center"
                         android:paddingLeft="10dp"
                         android:paddingTop="4dp" android:paddingRight="10dp" android:paddingBottom="16dp"
-                        android:text="15,000 L of water saved"/>
+                        android:text="15 km of landfield saved"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <TextView
