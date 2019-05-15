@@ -46,18 +46,6 @@ class ExploreResultsFragment : Fragment() {
         buttonChangeFilters.setOnClickListener {
             listener?.goBackToCategorySelection()
         }
-        /*
-        MeatCard.setOnClickListener{
-            (activity as MainActivity).openDetailsDialog()
-        }
-        */
-        /* THE ONE WORKING AS EXPLORE DETAILS DIALOG AS AN ACTIVITY
-        MeatCard.setOnClickListener {
-            val intent = Intent(activity, ExploreDetailsDialog::class.java)
-            startActivity(intent)
-        }
-        */
-
         MeatCard.setOnClickListener {
             listener?.showDetailsDialog()
         }
@@ -73,17 +61,6 @@ class ExploreResultsFragment : Fragment() {
                 .show()
             return@setOnClickListener
         }
-
-
-
-        /*
-        MeatCard.setOnClickListener {
-            fun onClick(v: View) {
-                // When button is clicked, call up to owning activity.
-                (activity as ExploreDetailsDialog).getDialog()
-            }
-        }
-        */
     }
 
     override fun onAttach(context: Context) {
