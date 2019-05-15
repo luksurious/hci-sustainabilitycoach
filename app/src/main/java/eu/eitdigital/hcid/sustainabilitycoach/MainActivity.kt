@@ -4,17 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.children
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
+import eu.eitdigital.hcid.sustainabilitycoach.home.Home2Fragment
+import eu.eitdigital.hcid.sustainabilitycoach.home.HomeAfterPlanFragment
+import eu.eitdigital.hcid.sustainabilitycoach.home.HomeAfterWeeksFragment
+import eu.eitdigital.hcid.sustainabilitycoach.home.HomeFragment
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
 import eu.eitdigital.hcid.sustainabilitycoach.plan.Home3Fragment
@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         Pair(DummyDataModel.States.ACTIVE_UNPLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.ACTIVE_PLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.FAILED_ONCE, HomeAfterPlanFragment::class.java),
-        Pair(DummyDataModel.States.SUCCEEDED_ONCE, HomeFragment::class.java),
-        Pair(DummyDataModel.States.AFTER_WEEKS, HomeFragment::class.java)
+        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Home2Fragment::class.java),
+        Pair(DummyDataModel.States.AFTER_WEEKS, HomeAfterWeeksFragment::class.java)
     )
 
     private var habitsStateFragments: HashMap<DummyDataModel.States, Class<out Fragment>> = hashMapOf(

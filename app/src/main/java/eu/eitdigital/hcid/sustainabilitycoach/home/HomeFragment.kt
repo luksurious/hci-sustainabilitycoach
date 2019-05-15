@@ -1,4 +1,4 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import eu.eitdigital.hcid.sustainabilitycoach.R
 import eu.eitdigital.hcid.sustainabilitycoach.explore.ExploreActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
@@ -25,6 +26,7 @@ class HomeFragment() : Fragment() {
     }
 
     companion object {
-        fun newInstance(): HomeFragment = HomeFragment()
+        fun newInstance(): HomeFragment =
+            HomeFragment()
     }
 }

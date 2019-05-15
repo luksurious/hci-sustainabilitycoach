@@ -1,4 +1,4 @@
-package eu.eitdigital.hcid.sustainabilitycoach
+package eu.eitdigital.hcid.sustainabilitycoach.home
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import eu.eitdigital.hcid.sustainabilitycoach.FillResultsActivity
+import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_home2.*
 
 
