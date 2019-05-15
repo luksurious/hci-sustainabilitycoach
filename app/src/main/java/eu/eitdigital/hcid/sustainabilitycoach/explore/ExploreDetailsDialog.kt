@@ -1,23 +1,3 @@
-
-/*
-package eu.eitdigital.hcid.sustainabilitycoach.explore
-
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import eu.eitdigital.hcid.sustainabilitycoach.HomeFillResults
-import eu.eitdigital.hcid.sustainabilitycoach.R
-
-
-class ExploreDetailsDialog : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details_dialog)
-    }
-}
-*/
-
 package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 import android.app.Dialog
@@ -64,6 +44,7 @@ class ExploreDetailsDialog: DialogFragment() {
         }
 
         button_start_habit.setOnClickListener {
+            activity?.finish()
             val intent = Intent(activity, PlanActivity::class.java)
             startActivity(intent)
         }

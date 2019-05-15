@@ -133,7 +133,9 @@ class MainActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
 
-        showFragmentOfState()
+        if (!isFinishing) {
+            showFragmentOfState()
+        }
     }
 
     private fun showFragmentOfState() {

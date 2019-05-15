@@ -1,5 +1,6 @@
 package eu.eitdigital.hcid.sustainabilitycoach.explore
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +11,10 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
+import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.ExploreFilters
+import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
+import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
 import eu.eitdigital.hcid.sustainabilitycoach.plan.ui.PlanCoachInfoDialogFragment
 import kotlinx.android.synthetic.main.activity_explore.*
 
@@ -22,12 +26,16 @@ class ExploreActivity : AppCompatActivity(),
 
     var state: String = ""
 
+    private lateinit var preferences: DummyDataModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_explore)
 
         setSupportActionBar(appToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        preferences = DummyDataModel(getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE));
 
         showCategorySelection(false)
         state = ExploreCategoryFragment.STEP
@@ -98,9 +106,10 @@ class ExploreActivity : AppCompatActivity(),
                 return true
             }
             R.id.explore_plan_cancel -> {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
+                finish()
+//                val intent = Intent(this, MainActivity::class.java)
+//                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+//                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)
@@ -125,4 +134,11 @@ class ExploreActivity : AppCompatActivity(),
         dialog.show(ft, ExploreDetailsDialog.TAG)
     }
 
+    override fun startPlanning() {
+        preferences.state = DummyDataModel.States.ACTIVE_PLANNED
+
+        finish()
+        val intent = Intent(this, PlanActivity::class.java)
+        startActivity(intent)
+    }
 }
