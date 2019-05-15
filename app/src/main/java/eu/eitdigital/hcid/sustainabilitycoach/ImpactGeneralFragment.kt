@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 
 class ImpactGeneralFragment: Fragment() {
@@ -22,6 +23,9 @@ class ImpactGeneralFragment: Fragment() {
         demoCollectionPagerAdapter = GeneralCollectionPagerAdapter(childFragmentManager)
         viewPager = view.findViewById(R.id.pager)
         viewPager.adapter = demoCollectionPagerAdapter
+
+        val wormDotsIndicator:WormDotsIndicator = view.findViewById(R.id.worm_dots_indicator)
+        wormDotsIndicator.setViewPager(viewPager)
     }
 }
 

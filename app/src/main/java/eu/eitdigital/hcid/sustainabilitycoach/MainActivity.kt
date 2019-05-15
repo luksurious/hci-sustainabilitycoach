@@ -2,6 +2,7 @@ package eu.eitdigital.hcid.sustainabilitycoach
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -71,7 +72,13 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_impact -> {
                 activeTab = Tabs.IMPACT
 
-                showFragmentOfState()
+                //showFragmentOfState()
+                if(preferences.state == DummyDataModel.States.AFTER_WEEKS){
+                    openFragment(ImpactFragment.newInstance())
+                } else {
+                    openFragment(ImpactEmpty.newInstance())
+                }
+
 
                 return@OnNavigationItemSelectedListener true
             }
