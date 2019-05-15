@@ -14,6 +14,9 @@ class FillResultsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fill_results)
+
+        setSupportActionBar(appToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         //openFragment(HomeFillResults.newInstance(""))
         goButton.setOnClickListener{
             // Get the checked radio button id from radio group
@@ -34,9 +37,9 @@ class FillResultsActivity : AppCompatActivity() {
         // Get the clicked radio button instance
         val radio: RadioButton = findViewById(radio_group.checkedRadioButtonId)
         if(radio.text.equals("NO")){
-            questions.visibility = View.VISIBLE
+            checkboxCard.visibility = View.VISIBLE
         }else{
-            questions.visibility = View.INVISIBLE
+            checkboxCard.visibility = View.GONE
         }
         /*Toast.makeText(applicationContext,"On click : ${radio.text}",
             Toast.LENGTH_SHORT).show()*/

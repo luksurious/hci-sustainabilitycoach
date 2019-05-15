@@ -4,202 +4,245 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent"
-        tools:context=".FillResultsActivity">
-    <LinearLayout
-            android:id="@+id/fillresultscard"
+        android:id="@+id/activity_results"
+        tools:context=".FillResultsActivity"
+        android:backgroundTint="@color/backgroundColour"
+        android:background="#F1F5F8">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:background="@color/colorLight"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" tools:ignore="MissingConstraints">
-        <com.google.android.material.card.MaterialCardView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/OrganicCard">
-            <ImageView
-                    android:src="@drawable/cow"
-                    android:layout_margin="0dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageMeat"
-                    android:contentDescription="Reduce meat consumtion image"/>
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorLight"
+                app:title="Filling results"
+                app:titleTextColor="@color/colorPrimaryDark" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <TextView
-                    android:text="Reduce meat consumption"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="140dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_height="43dp" android:id="@+id/textOrganicFood" android:typeface="sans"
-                    android:textSize="20sp" android:textStyle="bold"/>
-
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-    <LinearLayout
-            android:id="@+id/title_Habit"
+    <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100"
-            android:padding="15dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fillresultscard">
-        <TextView
-                android:text="Task: Eat no meat"
-                android:layout_width="345dp"
-                android:layout_height="64dp"
-                android:id="@+id/labelMeat" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintVertical_bias="0.276" android:textSize="24sp"/>
-    </LinearLayout>
-    <LinearLayout
-            android:id="@+id/explore_category_row2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100"
-            android:padding="15dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fillresultscard">
-
-        <RadioGroup
-                android:id="@+id/radio_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#dbeceb"
-                android:padding="15dp"
-        >
-            <TextView
-                    android:id="@+id/title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Did you achieved the goal?"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-            />
-            <RadioButton
-                    android:id="@+id/yesOption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="YES"
-                    android:onClick="radio_button_click"
-            />
-            <RadioButton
-                    android:id="@+id/noOption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="NO"
-                    android:onClick="radio_button_click"
-            />
-        </RadioGroup>
-    </LinearLayout>
-    <LinearLayout
-            android:id="@+id/questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="invisible"
-            android:weightSum="100"
-            android:padding="15dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/explore_category_row2">
-
-        <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Was there anything affecting the task?"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-                android:id="@+id/cb_addidas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Adidas"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
-        <CheckBox
-                android:id="@+id/cb_reebok"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Reebok"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cb_addidas" />
-
-        <CheckBox
-                android:id="@+id/cb_converse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Converse"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cb_reebok" />
-    </LinearLayout>
-    <LinearLayout
-            android:layout_width="377dp"
-            android:layout_height="67dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/explore_category_row2"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:gravity="center_vertical" android:id="@+id/linearLayout2" app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintVertical_bias="0.502">
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/skip_button"
-                android:layout_width="109dp"
-                android:layout_height="59dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_gravity="start"
-                android:text="@string/explore_button_skip"
-                android:textSize="16sp"
-                style="@style/AppTheme.MaterialButton.Text"
-                app:cornerRadius="24dp"/>
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/goButton"
-                android:layout_width="109dp"
-                android:layout_height="59dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="8dp"
-                android:layout_gravity="end"
-                android:text="@string/save"
-                android:textSize="18sp"
-                app:cornerRadius="24dp"/>
-    </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/MeatCard">
+
+                <ImageView
+                        android:src="@drawable/cow"
+                        android:layout_margin="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageMeat"
+                        android:contentDescription="Reduce meat consumtion image"/>
+                <TextView
+                        android:text="Reduce meat consumption"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="43dp" android:id="@+id/textMeat" android:typeface="sans"
+                        android:textSize="20sp" android:textStyle="bold"/>
+                <ImageView
+                        android:src="@drawable/ic_apple"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/apple2"/>
+                <TextView
+                        android:text="Food"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="45dp"
+                        android:layout_height="wrap_content" android:id="@+id/textCategory2"
+                        android:textSize="14sp"/>
+                <ImageView
+                        android:src="@drawable/ic_difficulty"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="110dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/difficulty2"/>
+                <TextView
+                        android:text="Easy"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="135dp"
+                        android:layout_height="wrap_content" android:id="@+id/textDifficulty2"
+                        android:textSize="14sp"/>
+                <ImageView
+                        android:src="@drawable/ic_leaf"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="195dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/impact2"/>
+                <TextView
+                        android:text="Medium impact"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="185dp"
+                        android:layout_marginLeft="220dp"
+                        android:layout_height="wrap_content" android:id="@+id/textImpact2"
+                        android:textSize="14sp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/RadioGroup">
+                <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                >
+                    <TextView
+                            android:id="@+id/title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Did you achieved the goal?"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                    />
+                    <RadioButton
+                            android:id="@+id/yesOption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="YES"
+                            android:onClick="radio_button_click"
+                    />
+                    <RadioButton
+                            android:id="@+id/noOption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NO"
+                            android:onClick="radio_button_click"
+                    />
+                </RadioGroup>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/checkboxCard"
+                    android:visibility="gone">
+                <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Was there anything affecting the task?"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:typeface="sans"
+                        android:textSize="20sp" android:textStyle="bold"
+                />
+
+                <CheckBox
+                        android:id="@+id/restaurantOpt"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="I went to a restaurant without vegetarian options"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+                <CheckBox
+                        android:id="@+id/groceriesOpt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="110dp"
+                        android:text="I had not time to make my groceries"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/restaurantOpt" />
+
+                <CheckBox
+                        android:id="@+id/desireOpt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="150dp"
+                        android:text="I really wanted to eat meat today"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/groceriesOpt" />
+                <CheckBox
+                        android:id="@+id/otherOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="190dp"
+                        android:text="Other"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/desireOpt" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+              android:layout_width="match_parent" android:layout_height="match_parent"
+              android:gravity="center"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/goButton"
+                    android:text="SAVE RESULTS"
+                    android:layout_width="200dp"
+                    android:layout_height="59dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textSize="18sp"
+                    app:cornerRadius="30dp"
+            />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
