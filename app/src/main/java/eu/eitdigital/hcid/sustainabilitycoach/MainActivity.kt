@@ -2,17 +2,17 @@ package eu.eitdigital.hcid.sustainabilitycoach
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.core.view.children
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
-import eu.eitdigital.hcid.sustainabilitycoach.explore.ExploreDetailsDialog
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
 import eu.eitdigital.hcid.sustainabilitycoach.plan.Home3Fragment
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var preferences: DummyDataModel
 
-    private var stateFragments: HashMap<DummyDataModel.States, Class<out Fragment>> = hashMapOf(
+    private var homeStateFragments: HashMap<DummyDataModel.States, Class<out Fragment>> = hashMapOf(
         Pair(DummyDataModel.States.NEW, HomeFragment::class.java),
         Pair(DummyDataModel.States.ACTIVE_UNPLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.ACTIVE_PLANNED, HomeAfterPlanFragment::class.java),
@@ -35,31 +35,47 @@ class MainActivity : AppCompatActivity() {
         Pair(DummyDataModel.States.AFTER_WEEKS, HomeFragment::class.java)
     )
 
+    private var habitsStateFragments: HashMap<DummyDataModel.States, Class<out Fragment>> = hashMapOf(
+        Pair(DummyDataModel.States.NEW, HabitsFragment::class.java),
+        Pair(DummyDataModel.States.ACTIVE_UNPLANNED, Habits2Fragment::class.java),
+        Pair(DummyDataModel.States.ACTIVE_PLANNED, Habits2Fragment::class.java),
+        Pair(DummyDataModel.States.FAILED_ONCE, Habits2Fragment::class.java),
+        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Habits2Fragment::class.java),
+        Pair(DummyDataModel.States.AFTER_WEEKS, Habits3Fragment::class.java)
+    )
+
+    private var activeTab = Tabs.HOME
+
+    enum class Tabs {
+        HOME, HABITS, IMPACT, PROFILE
+    }
+
     private val onBottomNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                setupHomeTab()
+                activeTab = Tabs.HOME
+
+                showFragmentOfState()
 
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_habits -> {
-                appToolbar.title = resources.getString(R.string.title_habits)
+                activeTab = Tabs.HABITS
 
-                openFragment(HabitsFragment.newInstance())
+                showFragmentOfState()
 
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_impact -> {
-                appToolbar.title = resources.getString(R.string.title_impact)
+                activeTab = Tabs.IMPACT
 
-                openFragment(ImpactFragment.newInstance())
+                showFragmentOfState()
 
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_profile -> {
-                appToolbar.title = resources.getString(R.string.title_profile)
-
-                openFragment(ProfileFragment.newInstance())
+                activeTab = Tabs.PROFILE
+                showFragmentOfState()
 
                 return@OnNavigationItemSelectedListener true
             }
@@ -68,6 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val onDrawerNavigationItemSelectedListener = NavigationView.OnNavigationItemSelectedListener {
+        activeTab = Tabs.HOME
         when (it.itemId) {
             R.id.nav_start_new -> {
                 preferences.state = DummyDataModel.States.NEW
@@ -102,8 +119,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupHomeTab(addToBack: Boolean = true) {
-        appToolbar.title = resources.getString(R.string.app_name)
-
         openFragment(HomeFragment.newInstance(), addToBack)
     }
 
@@ -127,6 +142,7 @@ class MainActivity : AppCompatActivity() {
 
         nav_view.setOnNavigationItemSelectedListener(onBottomNavigationItemSelectedListener)
 
+        activeTab = Tabs.HOME
         showFragmentOfState()
     }
 
@@ -139,22 +155,57 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showFragmentOfState() {
-        val fragment: Fragment? = stateFragments[preferences.state]?.newInstance()
 
-        if (fragment == null) {
-            setupHomeTab()
-        } else {
-            Log.i("STATE", "State is " + preferences.state)
-            openFragment(fragment)
+        activateCorrectTab()
+        when (activeTab) {
+            Tabs.HOME -> {
+                appToolbar.title = resources.getString(R.string.app_name)
+
+                val fragment: Fragment? = homeStateFragments[preferences.state]?.newInstance()
+
+                if (fragment == null) {
+                    setupHomeTab()
+                } else {
+                    Log.i("STATE", "State is " + preferences.state)
+                    openFragment(fragment)
+                }
+            }
+            Tabs.HABITS -> {
+                appToolbar.title = resources.getString(R.string.title_habits)
+
+                var fragment: Fragment? = habitsStateFragments[preferences.state]?.newInstance()
+
+                if (fragment == null) {
+                    fragment = HabitsFragment.newInstance()
+                }
+
+                Log.i("STATE", "State is " + preferences.state)
+                openFragment(fragment)
+            }
+            Tabs.IMPACT -> {
+                appToolbar.title = resources.getString(R.string.title_impact)
+                openFragment(ImpactFragment.newInstance())
+            }
+            Tabs.PROFILE -> {
+                appToolbar.title = resources.getString(R.string.title_profile)
+                openFragment(ProfileFragment.newInstance())
+            }
         }
+    }
+
+    private fun activateCorrectTab() = when (activeTab) {
+        Tabs.HOME -> nav_view.menu.findItem(R.id.navigation_home)?.isChecked = true
+        Tabs.HABITS -> nav_view.menu.findItem(R.id.navigation_habits)?.isChecked = true
+        Tabs.IMPACT -> nav_view.menu.findItem(R.id.navigation_impact)?.isChecked = true
+        Tabs.PROFILE -> nav_view.menu.findItem(R.id.navigation_profile)?.isChecked = true
     }
 
     private fun openFragment(fragment: Fragment, addToBack: Boolean = true) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
-        if (addToBack && currentFragment != null && currentFragment != fragment.javaClass.name) {
-            transaction.addToBackStack(null)
-        }
+//        if (addToBack && currentFragment != null && currentFragment != fragment.javaClass.name) {
+//            transaction.addToBackStack(null)
+//        }
         transaction.commit()
 
         currentFragment = fragment.javaClass.name
@@ -164,6 +215,9 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
+        } else if (activeTab != Tabs.HOME) {
+            activeTab = Tabs.HOME
+            showFragmentOfState()
         } else {
             super.onBackPressed()
         }
