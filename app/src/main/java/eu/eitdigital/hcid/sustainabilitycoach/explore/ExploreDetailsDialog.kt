@@ -9,9 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import eu.eitdigital.hcid.sustainabilitycoach.R
-import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
 import kotlinx.android.synthetic.main.activity_details_dialog.*
-import kotlinx.android.synthetic.main.plan_success_dialog_fragment.*
 
 class ExploreDetailsDialog: DialogFragment() {
     companion object {
@@ -34,19 +32,16 @@ class ExploreDetailsDialog: DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*
-        dialogToolbar?.setNavigationIcon(R.drawable.ic_close_white_24dp)
-        dialogToolbar?.setNavigationOnClickListener { dialog?.dismiss() }
-        */
+//        dialogToolbar?.setNavigationIcon(R.drawable.ic_close_white_24dp)
+//        dialogToolbar?.setNavigationOnClickListener { dialog?.dismiss() }
+
 
         imageClose.setOnClickListener{
             dialog?.dismiss()
         }
 
         button_start_habit.setOnClickListener {
-            activity?.finish()
-            val intent = Intent(activity, PlanActivity::class.java)
-            startActivity(intent)
+            listener?.startPlanning()
         }
     }
 
