@@ -41,7 +41,7 @@
             <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="780dp"
-                    app:srcCompat="@drawable/history"
+                    app:srcCompat="@drawable/history2"
                     android:layout_marginTop="16dp"
                     android:id="@+id/history"/>
 

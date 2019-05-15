@@ -9,13 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import eu.eitdigital.hcid.sustainabilitycoach.R
-import kotlinx.android.synthetic.main.activity_details_dialog.*
+import kotlinx.android.synthetic.main.activity_details_planning_dialog.*
 
-class ExploreDetailsDialog: DialogFragment() {
+class DetailsPlanningDialog: DialogFragment() {
     companion object {
         val TAG = "ExploreDetailsDialog"
 
-        fun newInstance() = ExploreDetailsDialog()
+        fun newInstance() = DetailsPlanningDialog()
     }
 
     private var listener: ExploreFragmentInteractionListener? = null
@@ -26,24 +26,15 @@ class ExploreDetailsDialog: DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_details_dialog, container, false)
+        return inflater.inflate(R.layout.activity_details_planning_dialog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        dialogToolbar?.setNavigationIcon(R.drawable.ic_close_white_24dp)
-//        dialogToolbar?.setNavigationOnClickListener { dialog?.dismiss() }
-
-
-        imageClose.setOnClickListener{
-            dialog?.dismiss()
+        buttonStartPlanning.setOnClickListener {
+            listener?.startPlanning()
         }
-
-        button_start_habit.setOnClickListener {
-            listener?.showPlanningDialog()
-        }
-
     }
 
     override fun onStart() {

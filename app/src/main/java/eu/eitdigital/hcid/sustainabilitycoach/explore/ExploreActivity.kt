@@ -134,6 +134,13 @@ class ExploreActivity : AppCompatActivity(),
         dialog.show(ft, ExploreDetailsDialog.TAG)
     }
 
+    override fun showPlanningDialog() {
+        val dialog = DetailsPlanningDialog.newInstance()
+
+        val ft = supportFragmentManager.beginTransaction()
+        dialog.show(ft, DetailsPlanningDialog.TAG)
+    }
+
     override fun startPlanning() {
         preferences.state = DummyDataModel.States.ACTIVE_PLANNED
 
