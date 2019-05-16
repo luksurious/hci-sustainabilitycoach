@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorOnPrimary">@color/colorLight</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
     <style name="AppTheme.MaterialCardView.checkable" parent="@style/Widget.MaterialComponents.CardView">
         <item name="android:checkable">true</item>

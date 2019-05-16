@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView9"
                 android:textSize="22sp"
-                android:fontFamily="sans-serif-medium"/>
+                android:fontFamily="@font/montserrat"/>
 
         <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
