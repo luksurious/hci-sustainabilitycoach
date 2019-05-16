@@ -25,11 +25,42 @@
                     android:text="Average percentage of successfully performed habits"
                     android:textAlignment="center"/>
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="253dp"
-                    app:srcCompat="@drawable/combo"
-                    android:id="@+id/imageView5" android:layout_marginTop="15dp"/>
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp">
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/clap"
+                            android:id="@+id/imageView2"
+                            android:contentDescription="Factory image" android:layout_marginTop="30dp"
+                            android:layout_marginBottom="20dp"/>
+                    <TextView
+                            android:text="Combo !"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="22sp"
+                            android:textColor="#141418" android:textAlignment="center"
+                            android:fontFamily="@font/montserrat_bold" android:paddingTop="14dp" android:paddingBottom="2dp"/>
+                    <TextView
+                            android:text="You completed your 3 last habits"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/textView6"
+
+                            android:fontFamily="@font/montserrat" android:textAlignment="center"
+                            android:textSize="12sp" android:paddingLeft="10dp"
+                            android:paddingTop="8dp" android:paddingRight="10dp" android:layout_marginBottom="20dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

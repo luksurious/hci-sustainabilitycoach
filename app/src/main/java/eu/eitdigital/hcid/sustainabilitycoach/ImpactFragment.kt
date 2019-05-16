@@ -56,12 +56,13 @@ class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapte
     override fun getPageTitle(position: Int): CharSequence {
         when(position){
             0 -> return "Savings"
-            1 -> return "Success Rate"
+            1 -> return "Success"
             else -> {
                 return "History"
             }
         }
     }
+
 
     override fun getItem(i: Int): Fragment {
         when(i){
