@@ -11,7 +11,7 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:orientation="vertical"
@@ -47,32 +47,30 @@
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonStartPlanning"
-                style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
                 android:layout_width="wrap_content"
                 android:layout_height="59dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="START PLANNING"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Plan with coach"
                 android:textSize="20sp"
                 app:cornerRadius="24dp"/>
 
-        <TextView
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/textWithoutCoach"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="Do it without the coach"
                 android:textColor="@color/colorPrimary"
-                android:textAlignment="center"
-                android:textSize="20sp"
-
-
+                android:layout_gravity="center_horizontal"
+                android:textSize="16sp"
                 android:selectAllOnFocus="false"
                 android:linksClickable="false"
                 android:autoLink="all"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
         />
 
     </LinearLayout>
