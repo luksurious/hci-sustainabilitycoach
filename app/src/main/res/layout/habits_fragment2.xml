@@ -95,4 +95,19 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_create_habit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Add habit"
+        app:cornerRadius="24dp"
+        android:textSize="16sp" />
+
 </LinearLayout>

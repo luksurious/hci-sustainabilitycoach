@@ -12,10 +12,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
-import eu.eitdigital.hcid.sustainabilitycoach.home.Home2Fragment
-import eu.eitdigital.hcid.sustainabilitycoach.home.HomeAfterPlanFragment
-import eu.eitdigital.hcid.sustainabilitycoach.home.HomeAfterWeeksFragment
-import eu.eitdigital.hcid.sustainabilitycoach.home.HomeFragment
+import eu.eitdigital.hcid.sustainabilitycoach.home.*
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
 import eu.eitdigital.hcid.sustainabilitycoach.plan.Home3Fragment
@@ -34,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         Pair(DummyDataModel.States.ACTIVE_UNPLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.ACTIVE_PLANNED, HomeAfterPlanFragment::class.java),
         Pair(DummyDataModel.States.FAILED_ONCE, HomeAfterPlanFragment::class.java),
-        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Home2Fragment::class.java),
+        Pair(DummyDataModel.States.SUCCEEDED_ONCE, HomeAfterSuccessFragment::class.java),
         Pair(DummyDataModel.States.AFTER_WEEKS, HomeAfterWeeksFragment::class.java)
     )
 
@@ -231,6 +228,11 @@ class MainActivity : AppCompatActivity() {
     fun openFillResults() {
         openFragment(Home2Fragment.newInstance("",""))
     }
+
+    fun showImpactTab() {
+        nav_view.selectedItemId = R.id.navigation_impact
+    }
+
     private fun openFillResults2() {
         appToolbar.title = resources.getString(R.string.app_name)
         openFragment(Home3Fragment.newInstance("",""))

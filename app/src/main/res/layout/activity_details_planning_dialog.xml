@@ -66,10 +66,11 @@
                 android:text="Do it without the coach"
                 android:textColor="@color/colorPrimary"
                 android:layout_gravity="center_horizontal"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:selectAllOnFocus="false"
                 android:linksClickable="false"
                 android:autoLink="all"
+                app:cornerRadius="24dp"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
         />
 

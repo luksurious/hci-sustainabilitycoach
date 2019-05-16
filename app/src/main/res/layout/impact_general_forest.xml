@@ -27,6 +27,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:src="@drawable/landfield"
+                            android:scaleType="centerCrop"
                             android:id="@+id/imageView2"
                             />
                     <TextView

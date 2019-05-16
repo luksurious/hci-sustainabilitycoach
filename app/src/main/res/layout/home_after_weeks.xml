@@ -12,14 +12,27 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:paddingBottom="16dp">
+
         <ImageView
             android:id="@+id/visual"
             android:layout_width="200dp"
-            android:layout_gravity="center_horizontal"
             android:layout_height="200dp"
             android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-            android:src="@drawable/ic_spa_black_24dp" />
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/save" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your active habits"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="32dp"
+            android:textSize="12sp"
+            android:textColor="#777"
+            android:textStyle="bold"
+            style="@style/TextAppearance.MaterialComponents.Overline" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/MeatCard"
@@ -28,56 +41,185 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp"
             android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingBottom="24dp">
+                android:layout_height="wrap_content"
+                android:background="#B3D9DC"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imageMeat"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
                     android:layout_margin="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
                     android:contentDescription="Reduce meat consumption image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/cow" />
+                    android:cropToPadding="true"
+                    android:minWidth="50dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/cowbig2" />
 
-                <TextView
-                    android:id="@+id/textMeat"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="Eat less meat"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:typeface="sans" />
+                    android:layout_weight=".7"
+                    android:background="#fff"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textMeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Eat less meat"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingLeft="8dp"
-                    android:backgroundTint="@color/colorAccent"
-                    android:text="Enter result"
-                    android:textSize="16sp"
-                    app:cornerRadius="20dp"
-                    android:layout_gravity="center_horizontal"/>
+                    <!--<LinearLayout-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginEnd="16dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+                    <!--<ImageView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_weight="0.7"-->
+                    <!--android:src="@drawable/ic_success_bar"/>-->
+                    <!--<TextView-->
+                    <!--android:text="7%"-->
+                    <!--android:layout_weight=".3"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content" />-->
+                    <!--</LinearLayout>-->
+
+                    <TextView
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="14sp"
+                        android:text="Your weekly progress:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/ellipse1"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center_vertical"
+
+                            android:background="@drawable/ic_progress_done_ellipse"
+                            />
+                        <ImageView
+                            android:id="@+id/line1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="-2dp"
+                            android:layout_marginEnd="-6dp"
+                            android:background="@drawable/ic_progress_done_line"
+                            />
+                        <ImageView
+                            android:id="@+id/ellipse2"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_progress_done_ellipse"
+                            />
+                        <ImageView
+                            android:id="@+id/line2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="-4dp"
+                            android:layout_marginEnd="-4dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_progress_done_line"
+                            />
+                        <ImageView
+                            android:id="@+id/ellipse3"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_progress_done_ellipse"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="-21dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/ic_check_white_24dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:src="@drawable/ic_check_white_24dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:src="@drawable/ic_star_white_24dp"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp" />
+                        <TextView
+                            android:text="Great work!"
+                            android:textSize="12sp"
+                            android:textColor="#666"
+                            android:textStyle="italic"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_impact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeColor="@color/colorPrimary"
+                        android:text="View impact"
+                        android:textSize="16sp"
+                        app:cornerRadius="20dp"
+                        />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/RecycleCard"
@@ -86,53 +228,167 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp"
             android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingBottom="24dp">
+                android:layout_height="wrap_content"
+                android:background="#B3D9DC"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/recycle_image"
-                    android:layout_width="match_parent"
+                    android:id="@+id/recycle3"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
                     android:layout_margin="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
                     android:contentDescription="Recycle image"
-                    android:scaleType="centerCrop"
+                    android:cropToPadding="true"
+                    android:minWidth="50dp"
+                    android:scaleType="centerInside"
                     android:src="@drawable/recycle3" />
 
-                <TextView
-                    android:id="@+id/textRecycle"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="Recycle"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:typeface="sans" />
+                    android:layout_weight=".7"
+                    android:background="#fff"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/recycle_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Recycle"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingLeft="8dp"
-                    android:backgroundTint="@color/colorAccent"
-                    android:text="Enter result"
-                    android:textSize="16sp"
-                    app:cornerRadius="20dp"
-                    android:layout_gravity="center_horizontal" />
+                    <TextView
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="14sp"
+                        android:text="Your weekly progress:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center_vertical"
+
+                            android:background="@drawable/ic_progress_done_ellipse"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="-2dp"
+                            android:layout_marginEnd="-6dp"
+                            android:background="@drawable/ic_progress_empty_line"
+                            />
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_progress_empty_ellipse_small"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="-4dp"
+                            android:layout_marginEnd="-4dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_progress_empty_line"
+                            />
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_progress_empty_ellipse_big"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="-21dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/ic_check_white_24dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp" />
+                        <TextView
+                            android:text="2"
+                            android:textSize="12sp"
+                            android:textColor="#999"
+                            android:textStyle="bold"
+                            android:layout_marginStart="21dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="3"
+                            android:textSize="12sp"
+                            android:textColor="#999"
+                            android:textStyle="bold"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="2 times left"
+                            android:textSize="12sp"
+                            android:textColor="#666"
+                            android:textStyle="italic"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Did you achieve it today?"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:text="Enter result"
+                        android:textSize="16sp"
+                        app:cornerRadius="20dp"
+                        />
+
+                </LinearLayout>
 
             </LinearLayout>
 

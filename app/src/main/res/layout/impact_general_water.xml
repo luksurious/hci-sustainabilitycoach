@@ -28,6 +28,7 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/water"
                             android:id="@+id/imageView2"
+                            android:scaleType="centerCrop"
                             />
                     <TextView
                             android:text="You saved 23.000L of water  , the equivalent of"

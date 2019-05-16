@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
+import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.home_after_weeks.*
 
@@ -18,7 +19,7 @@ class HomeAfterWeeksFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        button2.setOnClickListener { showUnsupportedActionMessage() }
+        button_impact.setOnClickListener { (activity as MainActivity).showImpactTab() }
         button3.setOnClickListener { showUnsupportedActionMessage() }
     }
 
