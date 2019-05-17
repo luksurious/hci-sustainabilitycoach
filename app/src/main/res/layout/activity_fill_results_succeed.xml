@@ -4,10 +4,12 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent"
         android:id="@+id/activity_results"
         tools:context=".FillResultsActivity"
-        android:background="@color/backgroundColour">
+        android:backgroundTint="@color/backgroundColour"
+        android:background="#F1F5F8">
 
     <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
@@ -27,6 +29,13 @@
                 app:titleTextColor="@color/colorPrimaryDark" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -48,8 +57,10 @@
                     android:layout_height="250dp"
                     app:cardUseCompatPadding="true"
                     app:cardCornerRadius="20dp"
-                    android:layout_marginTop="8dp"
                     app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     android:id="@+id/MeatCard">
 
                 <ImageView
@@ -57,11 +68,10 @@
                         android:layout_margin="0dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
                         android:id="@+id/imageMeat"
                         android:contentDescription="Reduce meat consumtion image"/>
                 <TextView
-                        android:text="Eat less meat"
+                        android:text="Reduce meat consumption"
                         android:layout_width="match_parent"
                         android:layout_marginTop="140dp"
                         android:layout_marginLeft="20dp"
@@ -117,6 +127,9 @@
                     app:cardUseCompatPadding="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     android:id="@+id/RadioGroup">
                 <RadioGroup
                         android:id="@+id/radio_group"
@@ -128,7 +141,7 @@
                             android:id="@+id/title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Did you complete the habit today?"
+                            android:text="Did you achieved the goal?"
                             android:textStyle="bold"
                             android:textSize="20sp"
                     />
@@ -137,88 +150,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="YES"
-                            android:onClick="radio_button_click"
                     />
                     <RadioButton
                             android:id="@+id/noOption"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="NO"
-                            android:onClick="radio_button_click"
                     />
                 </RadioGroup>
             </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardUseCompatPadding="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="2dp"
-                    android:id="@+id/checkboxCard"
-                    android:visibility="gone">
-                <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Was there anything affecting the task?"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:typeface="sans"
-                        android:textSize="20sp" android:textStyle="bold"
-                />
-
-                <CheckBox
-                        android:id="@+id/restaurantOpt"
-                        android:layout_width="match_parent"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="I went to a restaurant without vegetarian options"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView" />
-                <CheckBox
-                        android:id="@+id/groceriesOpt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="110dp"
-                        android:text="I had not time to make my groceries"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/restaurantOpt" />
-
-                <CheckBox
-                        android:id="@+id/desireOpt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="150dp"
-                        android:text="I really wanted to eat meat today"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/groceriesOpt" />
-                <CheckBox
-                        android:id="@+id/otherOpt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="190dp"
-                        android:text="Other"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/desireOpt" />
-            </com.google.android.material.card.MaterialCardView>
-
             <LinearLayout
-              android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:gravity="center"
+                    android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:gravity="center"
             >
 
                 <com.google.android.material.button.MaterialButton
-                        android:id="@+id/goButton"
+                        android:id="@+id/goButton2"
                         android:text="SAVE RESULTS"
                         android:layout_width="200dp"
                         android:layout_height="59dp"
@@ -231,11 +178,5 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:layout_constraintBottom_toTopOf="@+id/nav_view"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
