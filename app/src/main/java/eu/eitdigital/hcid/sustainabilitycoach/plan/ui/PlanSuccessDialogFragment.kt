@@ -33,6 +33,7 @@ class PlanSuccessDialogFragment: DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         dialogToolbar?.setNavigationIcon(R.drawable.ic_close_white_24dp)
+        dialogToolbar?.navigationIcon?.setTint(resources.getColor(R.color.grey, null))
         dialogToolbar?.setNavigationOnClickListener { listener?.finishTaskToDashboard() }
 
         finish_button.setOnClickListener { listener?.finishTaskToDashboard() }

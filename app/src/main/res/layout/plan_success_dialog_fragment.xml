@@ -11,7 +11,8 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorLight"
+        app:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,13 +21,13 @@
             android:id="@+id/dialogToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorLight"
             app:title="@string/plan_success_title"
-            app:titleTextColor="@color/colorLight" />
+            app:titleTextColor="@color/colorPrimaryDark" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <ImageView
-        android:src="@drawable/ic_planet_earth"
+        android:src="@drawable/planet2"
         android:id="@+id/success_image"
         android:layout_width="200dp"
         android:layout_height="200dp"
