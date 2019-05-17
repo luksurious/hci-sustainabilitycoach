@@ -15,7 +15,6 @@ import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.home.*
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
-import eu.eitdigital.hcid.sustainabilitycoach.plan.Home3Fragment
 import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_main.*
@@ -108,11 +107,15 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.nav_start_fill_dayone -> {
                 preferences.state = DummyDataModel.States.ACTIVE_PLANNED
-                showFragmentOfState()
+                Intent(this, FillResultsActivity::class.java).apply {
+                    startActivity(this)
+                }
             }
             R.id.nav_start_fill_daytwo -> {
                 preferences.state = DummyDataModel.States.FAILED_ONCE
-                showFragmentOfState()
+                Intent(this, FillResultsSucceedActivity::class.java).apply {
+                    startActivity(this)
+                }
             }
             R.id.nav_start_fill_end -> {
                 preferences.state = DummyDataModel.States.SUCCEEDED_ONCE
@@ -229,10 +232,6 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
-    fun openFillResults() {
-        openFragment(Home2Fragment.newInstance("",""))
-    }
-
     fun showImpactTab() {
         nav_view.selectedItemId = R.id.navigation_impact
     }
@@ -240,10 +239,5 @@ class MainActivity : AppCompatActivity() {
     fun showUnsupportedActionMessage() {
         Snackbar.make(fragment_container, "This action is currently not supported!", Snackbar.LENGTH_LONG)
             .show()
-    }
-
-    private fun openFillResults2() {
-        appToolbar.title = resources.getString(R.string.app_name)
-        openFragment(Home3Fragment.newInstance("",""))
     }
 }
