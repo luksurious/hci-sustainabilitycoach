@@ -31,7 +31,7 @@
                             android:scaleType="centerCrop"
                             />
                     <TextView
-                            android:text="You saved 23.000L of water  , the equivalent of"
+                            android:text="You saved 23.000L of water, the equivalent of"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/textView6"
                             android:paddingTop="14dp" android:paddingBottom="2dp"

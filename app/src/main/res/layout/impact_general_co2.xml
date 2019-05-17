@@ -86,7 +86,7 @@
                         android:paddingTop="10dp" android:paddingRight="16dp" android:paddingBottom="10dp"
                         android:text="7 times" android:fontFamily="@font/montserrat"/>
                 <TextView
-                        android:text="1.1 trip to Madrid/Zaragoza "
+                        android:text="0.7 trip to Madrid/Zaragoza "
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView8" android:layout_marginTop="38dp"
                         android:paddingLeft="10dp" android:paddingTop="12dp" android:paddingRight="10dp"
@@ -115,12 +115,12 @@
                         android:paddingTop="10dp" android:paddingRight="16dp" android:paddingBottom="10dp"
                         android:text="3 times" android:fontFamily="@font/montserrat"/>
                 <TextView
-                        android:text="not applicable"
+                        android:text="0.4 Madrid/Zaragoza by car"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView80"
                         android:layout_marginTop="38dp"
                         android:paddingLeft="10dp" android:paddingTop="12dp" android:paddingRight="10dp"
-                        android:paddingBottom="12dp" android:textAlignment="center" android:background="#999797"
+                        android:paddingBottom="12dp" android:textAlignment="center" android:background="#2196F3"
                         android:fontFamily="@font/montserrat" android:textColor="#FFFFFF" android:textStyle="bold"/>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
