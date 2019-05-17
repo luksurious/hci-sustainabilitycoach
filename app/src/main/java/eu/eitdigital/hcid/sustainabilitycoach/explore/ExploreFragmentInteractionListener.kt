@@ -27,4 +27,6 @@ interface ExploreFragmentInteractionListener {
     fun showPlanningDialog()
 
     fun startPlanning()
+
+    fun finishExploreActive()
 }

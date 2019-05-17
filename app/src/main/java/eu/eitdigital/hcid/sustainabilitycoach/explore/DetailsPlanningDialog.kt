@@ -2,14 +2,13 @@ package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 import android.app.Dialog
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import eu.eitdigital.hcid.sustainabilitycoach.R
-import kotlinx.android.synthetic.main.activity_details_planning_dialog.*
+import kotlinx.android.synthetic.main.fragment_explore_details_planning_dialog.*
 
 class DetailsPlanningDialog: DialogFragment() {
     companion object {
@@ -26,7 +25,7 @@ class DetailsPlanningDialog: DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_details_planning_dialog, container, false)
+        return inflater.inflate(R.layout.fragment_explore_details_planning_dialog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,6 +34,12 @@ class DetailsPlanningDialog: DialogFragment() {
         buttonStartPlanning.setOnClickListener {
             listener?.startPlanning()
         }
+
+        imageClose.setOnClickListener{
+            listener?.finishExploreActive()
+        }
+
+        MeatCard.setOnClickListener { dialog?.dismiss() }
     }
 
     override fun onStart() {
@@ -45,6 +50,7 @@ class DetailsPlanningDialog: DialogFragment() {
             (dialog as Dialog).window?.setLayout(width, height)
         }
     }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is ExploreFragmentInteractionListener) {

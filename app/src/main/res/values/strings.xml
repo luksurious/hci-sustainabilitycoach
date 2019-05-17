@@ -8,8 +8,8 @@
     <string name="title_profile">Profile</string>
     <string name="error_not_available">Sorry, this is not yet available</string>
     <string name="start_button">Create habit</string>
-    <string name="title_explore">Explore habits</string>
-    <string name="explore_category_text">Select the area you want to be more sustainable in</string>
+    <string name="title_explore">Create new habit</string>
+    <string name="explore_category_text">Select the area you want to be more sustainable in:</string>
     <string name="explore_difficulty_text">Do you want to start easy or take on a real challenge?</string>
     <string name="explore_button_next">Next</string>
     <string name="nav_header_subtitle">EIT HCID Project</string>
@@ -40,16 +40,15 @@
     <string name="achieved">Achieved?</string>
     <string name="save">Save</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="plan_schedule_per_week">time(s) per week</string>
     <string name="learn_coach_text">Learn more about the coach</string>
     <string name="coach_info_title">Learn about the coach</string>
     <string name="notification_tips">We recommend that you as many days as you planned before, and try to stick to this schedule per week to make it easier for you. However, if you don\'t know yet you can also select more days just to get a reminder.</string>
     <string name="coach_info_explanation">Our coach is an intelligent system which helps you in implementing new habits. You tell the coach what you want to achieve and the coach will give you information about the habits, tips, reminders, and motivate you through your impact and statistics.</string>
     <string name="less_meat_habit_detail_text">
-        Avoiding meat and dairy products is the single biggest way to reduce your environmental impact on the planet, according to the scientists behind the most comprehensive analysis to date of the damage farming does to the planet.\n\n
-        The new analysis shows that while meat and dairy provide just 18% of calories and 37% of protein, it uses the vast majority – 83% – of farmland and produces 60% of agriculture’s greenhouse gas emissions. Other recent research shows 86% of all land mammals are now livestock or humans. The scientists also found that even the very lowest impact meat and dairy products still cause much more environmental harm than the least sustainable vegetable and cereal growing.
+        Avoiding meat and dairy products is the single biggest way to reduce your environmental impact on the planet, according to the scientists behind the most comprehensive analysis to date of the damage farming does to the planet.
+        \n\nThe new analysis shows that while meat and dairy provide just 18% of calories and 37% of protein, it uses the vast majority – 83% – of farmland and produces 60% of agriculture’s greenhouse gas emissions. Other recent research shows 86% of all land mammals are now livestock or humans. The scientists also found that even the very lowest impact meat and dairy products still cause much more environmental harm than the least sustainable vegetable and cereal growing.
     </string>
     <string name="start_intro_text">This is our beautiful planet. Help us protect it for future generations!\n\nMake a change by implementing sustainable habits in your life. Get started below!</string>
+    <string name="menu_start_fill_end">Start (end task 2)</string>
 </resources>

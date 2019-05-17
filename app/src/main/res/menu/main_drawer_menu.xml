@@ -25,6 +25,10 @@
             android:icon="@drawable/ic_dashboard_black_24dp"
             android:title="@string/menu_start_fill_daytwo"/>
         <item
+            android:id="@+id/nav_start_fill_end"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="@string/menu_start_fill_end"/>
+        <item
             android:id="@+id/nav_start_after_twoweeks"
             android:icon="@drawable/ic_dashboard_black_24dp"
             android:title="@string/menu_start_after_twoweeks"/>

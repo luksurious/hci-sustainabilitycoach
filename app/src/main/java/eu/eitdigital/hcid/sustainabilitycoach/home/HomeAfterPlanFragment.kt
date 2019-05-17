@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.FillResultsActivity
+import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.home_after_plan_fragment.*
 
@@ -23,6 +24,8 @@ class HomeAfterPlanFragment() : Fragment() {
             val intent = Intent(activity, FillResultsActivity::class.java)
             startActivity(intent)
         }
+
+        MeatCard.setOnClickListener { (activity as MainActivity).showUnsupportedActionMessage() }
     }
 
     companion object {

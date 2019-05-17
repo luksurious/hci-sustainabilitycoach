@@ -3,7 +3,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:background="#F1F5F8">
+              android:layout_height="match_parent" android:background="@color/backgroundColour">
 
     <LinearLayout
             android:orientation="vertical"
@@ -16,8 +16,8 @@
                 android:id="@+id/imageView2"
                 android:contentDescription="Factory image" android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp" android:layout_gravity="center_horizontal|center_vertical"/>
-        <TextViegw
-                android:text="Not yet !"
+        <TextView
+                android:text="Not yet!"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="22sp"
                 android:textColor="#141418" android:textAlignment="center"
@@ -27,7 +27,6 @@
                 android:text="You didn't complete enough habits to check your impact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView6"
-
                 android:fontFamily="@font/montserrat" android:textAlignment="center"
                 android:textSize="12sp" android:paddingLeft="10dp"
                 android:paddingTop="8dp" android:paddingRight="10dp" android:layout_marginBottom="20dp"

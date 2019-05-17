@@ -2,14 +2,13 @@ package eu.eitdigital.hcid.sustainabilitycoach.explore
 
 import android.app.Dialog
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import eu.eitdigital.hcid.sustainabilitycoach.R
-import kotlinx.android.synthetic.main.activity_details_dialog.*
+import kotlinx.android.synthetic.main.fragment_explore_details_dialog.*
 
 class ExploreDetailsDialog: DialogFragment() {
     companion object {
@@ -26,15 +25,11 @@ class ExploreDetailsDialog: DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_details_dialog, container, false)
+        return inflater.inflate(R.layout.fragment_explore_details_dialog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        dialogToolbar?.setNavigationIcon(R.drawable.ic_close_white_24dp)
-//        dialogToolbar?.setNavigationOnClickListener { dialog?.dismiss() }
-
 
         imageClose.setOnClickListener{
             dialog?.dismiss()
@@ -42,6 +37,7 @@ class ExploreDetailsDialog: DialogFragment() {
 
         button_start_habit.setOnClickListener {
             listener?.showPlanningDialog()
+            dialog?.hide()
         }
 
     }

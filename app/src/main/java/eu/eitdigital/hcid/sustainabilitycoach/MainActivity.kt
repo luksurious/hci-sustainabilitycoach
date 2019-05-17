@@ -2,7 +2,6 @@ package eu.eitdigital.hcid.sustainabilitycoach
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -12,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.home.*
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
@@ -112,6 +112,10 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.nav_start_fill_daytwo -> {
                 preferences.state = DummyDataModel.States.FAILED_ONCE
+                showFragmentOfState()
+            }
+            R.id.nav_start_fill_end -> {
+                preferences.state = DummyDataModel.States.SUCCEEDED_ONCE
                 showFragmentOfState()
             }
             R.id.nav_start_after_twoweeks -> {
@@ -231,6 +235,11 @@ class MainActivity : AppCompatActivity() {
 
     fun showImpactTab() {
         nav_view.selectedItemId = R.id.navigation_impact
+    }
+
+    fun showUnsupportedActionMessage() {
+        Snackbar.make(fragment_container, "This action is currently not supported!", Snackbar.LENGTH_LONG)
+            .show()
     }
 
     private fun openFillResults2() {
