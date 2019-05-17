@@ -6,9 +6,8 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent"
-        tools:context=".plan.Home3Fragment">
+        tools:context=".home.HomeAfterSuccessFragment">
 
-        >
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageMeat"
-                    android:contentDescription="Reduce meat consumtion image"/>
+                    android:contentDescription="Reduce meat consumption image"/>
             <TextView
                     android:text="Reduce meat consumption"
                     android:layout_width="match_parent"
