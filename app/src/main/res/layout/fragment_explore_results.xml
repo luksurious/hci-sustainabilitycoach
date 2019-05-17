@@ -51,12 +51,12 @@
                 <ImageView
                     android:id="@+id/imageOrganicFood"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="130dp"
                     android:layout_margin="0dp"
                     android:adjustViewBounds="true"
                     android:contentDescription="Buy organic image"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/organic" />
+                    android:src="@drawable/bio2" />
 
                 <TextView
                     android:id="@+id/textOrganicFood"
@@ -135,7 +135,7 @@
                 <ImageView
                     android:id="@+id/imageMeat"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="130dp"
                     android:layout_margin="0dp"
                     android:contentDescription="Reduce meat consumption image"
                     android:scaleType="centerCrop"
@@ -220,11 +220,11 @@
                 <ImageView
                     android:id="@+id/imageWaste"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="130dp"
                     android:layout_margin="0dp"
                     android:contentDescription="Reduce waste image"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/waste" />
+                    android:src="@drawable/wasteyellow" />
 
                 <TextView
                     android:id="@+id/textWaste"

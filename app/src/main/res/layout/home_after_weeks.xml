@@ -238,7 +238,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="#B4DCB3"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -253,7 +253,7 @@
                     android:cropToPadding="true"
                     android:minWidth="50dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/recycle3" />
+                    android:src="@drawable/recyclegreensmall" />
 
                 <LinearLayout
                     android:layout_width="0dp"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,194 +7,199 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColour"
-    android:orientation="vertical"
     tools:context=".explore.ExploreResultsFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/MeatCard"
-        android:clickable="true"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="2dp"
-        android:focusable="true">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/MeatCard"
+            android:clickable="true"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingBottom="24dp">
-
-            <ImageView
-                android:id="@+id/imageMeat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:contentDescription="Reduce meat consumption image"
-                android:scaleType="centerCrop"
-                android:src="@drawable/cow" />
-
-            <TextView
-                android:id="@+id/textMeat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="Eat less meat"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:typeface="sans" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/imageMeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:contentDescription="Reduce meat consumption image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cow" />
 
                 <TextView
-                    android:id="@+id/textCategory2"
-                    android:layout_width="0dp"
+                    android:id="@+id/textMeat"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".38"
-                    android:layout_gravity="center_vertical"
-                    android:drawableStart="@drawable/ic_apple"
-                    android:drawablePadding="4dp"
-                    android:text="Food"
-                    android:textSize="14sp" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Eat less meat"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
 
-                <TextView
-                    android:id="@+id/textDifficulty2"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight=".25"
-                    android:drawableStart="@drawable/ic_difficulty"
-                    android:drawablePadding="4dp"
-                    android:text="Easy"
-                    android:textSize="14sp" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textImpact2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight=".37"
-                    android:drawableStart="@drawable/ic_leaf"
-                    android:drawablePadding="4dp"
-                    android:text="Medium impact"
-                    android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/textCategory2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".38"
+                        android:layout_gravity="center_vertical"
+                        android:drawableStart="@drawable/ic_apple"
+                        android:drawablePadding="4dp"
+                        android:text="Food"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textDifficulty2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".25"
+                        android:drawableStart="@drawable/ic_difficulty"
+                        android:drawablePadding="4dp"
+                        android:text="Easy"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textImpact2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".37"
+                        android:drawableStart="@drawable/ic_leaf"
+                        android:drawablePadding="4dp"
+                        android:text="Medium impact"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/RecycleCard"
-        android:clickable="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="2dp"
-        android:focusable="true">
-
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/RecycleCard"
+            android:clickable="true"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingBottom="24dp">
-
-            <ImageView
-                android:id="@+id/recycle_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:contentDescription="Recycle image"
-                android:scaleType="centerCrop"
-                android:src="@drawable/recycle3" />
-
-            <TextView
-                android:id="@+id/textRecycle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="Recycle"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:typeface="sans" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/recycle_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_margin="0dp"
+                    android:contentDescription="Recycle image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/path2" />
 
                 <TextView
-                    android:id="@+id/textCategory3"
-                    android:layout_width="0dp"
+                    android:id="@+id/textRecycle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".38"
-                    android:layout_gravity="center_vertical"
-                    android:drawableStart="@drawable/ic_household_small"
-                    android:drawablePadding="4dp"
-                    android:text="Household"
-                    android:textSize="14sp" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Recycle"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
 
-                <TextView
-                    android:id="@+id/textDifficulty3"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight=".25"
-                    android:drawableStart="@drawable/ic_difficulty"
-                    android:drawablePadding="4dp"
-                    android:text="Easy"
-                    android:textSize="14sp" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textImpact3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight=".37"
-                    android:drawableStart="@drawable/ic_leaf"
-                    android:drawablePadding="4dp"
-                    android:text="Low impact"
-                    android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/textCategory3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".38"
+                        android:layout_gravity="center_vertical"
+                        android:drawableStart="@drawable/ic_household_small"
+                        android:drawablePadding="4dp"
+                        android:text="Household"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textDifficulty3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".25"
+                        android:drawableStart="@drawable/ic_difficulty"
+                        android:drawablePadding="4dp"
+                        android:text="Easy"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textImpact3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".37"
+                        android:drawableStart="@drawable/ic_leaf"
+                        android:drawablePadding="4dp"
+                        android:text="Low impact"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-    </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_create_habit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Add habit"
+            app:cornerRadius="24dp"
+            android:textSize="16sp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_create_habit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Add habit"
-        app:cornerRadius="24dp"
-        android:textSize="16sp" />
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
