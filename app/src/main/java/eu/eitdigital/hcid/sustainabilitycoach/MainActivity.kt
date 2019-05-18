@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private var currentFragment: String? = null
 
     private lateinit var preferences: DummyDataModel
+    private var defaultElevation: Float = 12f
 
     private var homeStateFragments: HashMap<DummyDataModel.States, Class<out Fragment>> = hashMapOf(
         Pair(DummyDataModel.States.NEW, HomeFragment::class.java),
@@ -139,7 +140,6 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(appToolbar)
 
-
         // TODO: is a drawer good? might users try to use it? instead use menu with hidden option?
         //  or otherwise make admin only?
 //        val toggle = ActionBarDrawerToggle(
@@ -175,6 +175,7 @@ class MainActivity : AppCompatActivity() {
         when (activeTab) {
             Tabs.HOME -> {
                 appToolbar.title = resources.getString(R.string.app_name)
+                appBarLayout.elevation = defaultElevation
 
 
                 val fragment: Fragment? = homeStateFragments[preferences.state]?.newInstance()
@@ -187,6 +188,7 @@ class MainActivity : AppCompatActivity() {
             }
             Tabs.HABITS -> {
                 appToolbar.title = resources.getString(R.string.title_habits)
+                appBarLayout.elevation = defaultElevation
 
                 var fragment: Fragment? = habitsStateFragments[preferences.state]?.newInstance()
 
@@ -209,6 +211,7 @@ class MainActivity : AppCompatActivity() {
             }
             Tabs.PROFILE -> {
                 appToolbar.title = resources.getString(R.string.title_profile)
+                appBarLayout.elevation = defaultElevation
                 openFragment(ProfileFragment.newInstance())
             }
         }

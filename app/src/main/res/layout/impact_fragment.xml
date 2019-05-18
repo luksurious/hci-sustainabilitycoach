@@ -14,9 +14,12 @@
         android:backgroundTint="#FFFFFF"
         app:layout_constraintTop_toTopOf="parent">
         <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:background="#FFFFFF" android:backgroundTint="#FFFFFF"/>
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF" />
     </androidx.viewpager.widget.ViewPager>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
