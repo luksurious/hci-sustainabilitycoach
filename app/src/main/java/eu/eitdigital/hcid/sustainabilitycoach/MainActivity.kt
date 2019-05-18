@@ -68,13 +68,7 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_impact -> {
                 activeTab = Tabs.IMPACT
 
-                //showFragmentOfState()
-                if(preferences.state == DummyDataModel.States.AFTER_WEEKS){
-                    openFragment(ImpactFragment.newInstance())
-                } else {
-                    openFragment(ImpactEmpty.newInstance())
-                }
-
+                showFragmentOfState()
 
                 return@OnNavigationItemSelectedListener true
             }
@@ -199,7 +193,12 @@ class MainActivity : AppCompatActivity() {
             }
             Tabs.IMPACT -> {
                 appToolbar.title = resources.getString(R.string.title_impact)
-                openFragment(ImpactFragment.newInstance())
+
+                if (preferences.state == DummyDataModel.States.AFTER_WEEKS){
+                    openFragment(ImpactFragment.newInstance())
+                } else {
+                    openFragment(ImpactEmpty.newInstance())
+                }
             }
             Tabs.PROFILE -> {
                 appToolbar.title = resources.getString(R.string.title_profile)

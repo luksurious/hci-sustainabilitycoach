@@ -18,7 +18,7 @@ import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_explore_details_dialog.*
 
 
-class ExploreDetailsDialog: DialogFragment() {
+class ExploreDetailsDialog : DialogFragment() {
 
     private lateinit var demoCollectionPagerAdapter: DemoCollectionPagerAdapter
     private lateinit var viewPager: ViewPager
@@ -43,7 +43,7 @@ class ExploreDetailsDialog: DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        imageClose.setOnClickListener{
+        imageClose.setOnClickListener {
             dialog?.dismiss()
         }
 
@@ -56,11 +56,8 @@ class ExploreDetailsDialog: DialogFragment() {
         viewPager = view.findViewById(R.id.pager_details_habit)
         viewPager.adapter = demoCollectionPagerAdapter
 
-        val tabLayout:TabLayout = view.findViewById(R.id.tab_layout_details_habit)
+        val tabLayout: TabLayout = view.findViewById(R.id.tab_layout_details_habit)
         tabLayout.setupWithViewPager(viewPager)
-
-
-
 
 
     }
@@ -73,6 +70,7 @@ class ExploreDetailsDialog: DialogFragment() {
             (dialog as Dialog).window?.setLayout(width, height)
         }
     }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is ExploreFragmentInteractionListener) {
@@ -91,21 +89,21 @@ class ExploreDetailsDialog: DialogFragment() {
 
 class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
-    override fun getCount(): Int  = 2
+    override fun getCount(): Int = 2
 
     override fun getPageTitle(position: Int): CharSequence {
-        when(position){
+        when (position) {
             0 -> return "Details"
-           else -> {
-               return "tips"
-           }
+            else -> {
+                return "tips"
+            }
         }
 
     }
 
 
     override fun getItem(i: Int): Fragment {
-        when(i){
+        when (i) {
             0 -> return DetailsDescription()
             else -> {
                 return DetailsTips()
@@ -115,12 +113,12 @@ class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapte
 }
 
 
-class DetailsDescription: Fragment() {
+class DetailsDescription : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.explore_details_description, container, false)
 }
 
-class DetailsTips: Fragment() {
+class DetailsTips : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.explore_details_tips, container, false)
