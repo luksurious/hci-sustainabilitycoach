@@ -43,7 +43,9 @@ class ExploreDetailsDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        imageClose.setOnClickListener {
+        dialogToolbar?.setNavigationIcon(R.drawable.ic_close_black_24dp)
+        dialogToolbar?.navigationIcon?.setTint(resources.getColor(R.color.grey, null));
+        dialogToolbar?.setNavigationOnClickListener {
             dialog?.dismiss()
         }
 
