@@ -7,10 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
+import androidx.viewpager.widget.ViewPager
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentStatePagerAdapter
+import com.google.android.material.tabs.TabLayout
+
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_explore_details_dialog.*
 
+
 class ExploreDetailsDialog: DialogFragment() {
+
+    private lateinit var demoCollectionPagerAdapter: DemoCollectionPagerAdapter
+    private lateinit var viewPager: ViewPager
+
     companion object {
         val TAG = "ExploreDetailsDialog"
 
@@ -40,6 +52,17 @@ class ExploreDetailsDialog: DialogFragment() {
             dialog?.hide()
         }
 
+        demoCollectionPagerAdapter = DemoCollectionPagerAdapter(childFragmentManager)
+        viewPager = view.findViewById(R.id.pager_details_habit)
+        viewPager.adapter = demoCollectionPagerAdapter
+
+        val tabLayout:TabLayout = view.findViewById(R.id.tab_layout_details_habit)
+        tabLayout.setupWithViewPager(viewPager)
+
+
+
+
+
     }
 
     override fun onStart() {
@@ -63,4 +86,43 @@ class ExploreDetailsDialog: DialogFragment() {
         super.onDetach()
         listener = null
     }
+}
+
+
+class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+
+    override fun getCount(): Int  = 2
+
+    override fun getPageTitle(position: Int): CharSequence {
+        when(position){
+            0 -> return "Details"
+           else -> {
+               return "tips"
+           }
+        }
+
+    }
+
+
+    override fun getItem(i: Int): Fragment {
+        when(i){
+            0 -> return DetailsDescription()
+            else -> {
+                return DetailsTips()
+            }
+        }
+    }
+}
+
+
+class DetailsDescription: Fragment() {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+        inflater.inflate(R.layout.explore_details_description, container, false)
+}
+
+class DetailsTips: Fragment() {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+        inflater.inflate(R.layout.explore_details_tips, container, false)
+
 }

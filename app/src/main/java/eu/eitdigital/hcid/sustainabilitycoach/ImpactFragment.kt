@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.github.mikephil.charting.charts.LineChart
-import com.github.mikephil.charting.data.Entry
 import com.google.android.material.tabs.TabLayout
 import java.util.*
 import android.R.attr.entries
@@ -19,11 +17,6 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.components.XAxis
-
-
-
-
-
 
 
 class ImpactFragment: Fragment() {
