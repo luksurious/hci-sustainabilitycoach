@@ -139,17 +139,23 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(appToolbar)
 
+
         // TODO: is a drawer good? might users try to use it? instead use menu with hidden option?
         //  or otherwise make admin only?
-        val toggle = ActionBarDrawerToggle(
-            this, drawer_layout, appToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
-        )
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
+//        val toggle = ActionBarDrawerToggle(
+//            this, drawer_layout, appToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+//        )
+//        drawer_layout.addDrawerListener(toggle)
+//        toggle.syncState()
 
         main_drawer_view.setNavigationItemSelectedListener(onDrawerNavigationItemSelectedListener)
 
         nav_view.setOnNavigationItemSelectedListener(onBottomNavigationItemSelectedListener)
+
+        appToolbar.setOnLongClickListener {
+            drawer_layout.openDrawer(GravityCompat.START)
+            true
+        }
 
         activeTab = Tabs.HOME
         showFragmentOfState()
@@ -193,6 +199,7 @@ class MainActivity : AppCompatActivity() {
             }
             Tabs.IMPACT -> {
                 appToolbar.title = resources.getString(R.string.title_impact)
+                appBarLayout.elevation = 0f
 
                 if (preferences.state == DummyDataModel.States.AFTER_WEEKS){
                     openFragment(ImpactFragment.newInstance())
