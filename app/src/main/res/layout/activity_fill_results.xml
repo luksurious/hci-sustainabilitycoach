@@ -224,10 +224,10 @@
                         android:layout_height="59dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="@color/colorPrimary"
                         android:textSize="18sp"
                         app:cornerRadius="30dp"
                 />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

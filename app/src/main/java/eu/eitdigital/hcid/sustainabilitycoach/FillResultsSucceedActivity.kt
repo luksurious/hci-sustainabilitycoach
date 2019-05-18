@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.RadioButton
 import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
@@ -24,6 +25,7 @@ class FillResultsSucceedActivity : AppCompatActivity() {
         preferences = DummyDataModel(getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE));
         setSupportActionBar(appToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        goButton2.isEnabled = false
         goButton2.setOnClickListener {  var id: Int = radio_group.checkedRadioButtonId
             if (id!=-1){
                 val radio: RadioButton = this.findViewById(id)
@@ -59,5 +61,9 @@ class FillResultsSucceedActivity : AppCompatActivity() {
     fun  showUnsupportedActionMessage() {
         Snackbar.make(fragment_container, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
             .show()
+    }
+    fun radioOnclick(view: View){
+        goButton2.isEnabled=true;
+
     }
 }

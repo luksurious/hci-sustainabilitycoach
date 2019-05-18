@@ -37,9 +37,9 @@ class MainActivity : AppCompatActivity() {
     private var habitsStateFragments: HashMap<DummyDataModel.States, Class<out Fragment>> = hashMapOf(
         Pair(DummyDataModel.States.NEW, HabitsFragment::class.java),
         Pair(DummyDataModel.States.ACTIVE_UNPLANNED, Habits2Fragment::class.java),
-        Pair(DummyDataModel.States.ACTIVE_PLANNED, Habits2Fragment::class.java),
-        Pair(DummyDataModel.States.FAILED_ONCE, Habits2Fragment::class.java),
-        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Habits2Fragment::class.java),
+        Pair(DummyDataModel.States.ACTIVE_PLANNED, HomeAfterPlanFragment::class.java),
+        Pair(DummyDataModel.States.FAILED_ONCE, HomeAfterPlanFragment::class.java),
+        Pair(DummyDataModel.States.SUCCEEDED_ONCE, HomeAfterSuccessFragment::class.java),
         Pair(DummyDataModel.States.AFTER_WEEKS, Habits3Fragment::class.java)
     )
 
@@ -107,15 +107,17 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.nav_start_fill_dayone -> {
                 preferences.state = DummyDataModel.States.ACTIVE_PLANNED
-                Intent(this, FillResultsActivity::class.java).apply {
+                /*Intent(this, FillResultsActivity::class.java).apply {
                     startActivity(this)
-                }
+                }*/
+                showFragmentOfState()
             }
             R.id.nav_start_fill_daytwo -> {
                 preferences.state = DummyDataModel.States.FAILED_ONCE
                 Intent(this, FillResultsSucceedActivity::class.java).apply {
                     startActivity(this)
                 }
+                //showFragmentOfState()
             }
             R.id.nav_start_fill_end -> {
                 preferences.state = DummyDataModel.States.SUCCEEDED_ONCE
@@ -174,8 +176,8 @@ class MainActivity : AppCompatActivity() {
             Tabs.HOME -> {
                 appToolbar.title = resources.getString(R.string.app_name)
 
-                val fragment: Fragment? = homeStateFragments[preferences.state]?.newInstance()
 
+                val fragment: Fragment? = homeStateFragments[preferences.state]?.newInstance()
                 if (fragment == null) {
                     setupHomeTab()
                 } else {
@@ -217,7 +219,6 @@ class MainActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
-
         currentFragment = fragment.javaClass.name
     }
 

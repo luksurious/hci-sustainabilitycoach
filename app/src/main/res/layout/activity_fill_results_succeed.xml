@@ -150,12 +150,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="YES"
+                            android:onClick="radioOnclick"
                     />
                     <RadioButton
                             android:id="@+id/noOption"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="NO"
+                            android:onClick="radioOnclick"
                     />
                 </RadioGroup>
             </com.google.android.material.card.MaterialCardView>
@@ -171,7 +173,6 @@
                         android:layout_height="59dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="@color/colorPrimary"
                         android:textSize="18sp"
                         app:cornerRadius="30dp"
                 />
