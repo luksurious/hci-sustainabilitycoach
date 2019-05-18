@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
     private var habitsStateFragments: HashMap<DummyDataModel.States, Class<out Fragment>> = hashMapOf(
         Pair(DummyDataModel.States.NEW, HabitsFragment::class.java),
         Pair(DummyDataModel.States.ACTIVE_UNPLANNED, Habits2Fragment::class.java),
-        Pair(DummyDataModel.States.ACTIVE_PLANNED, HomeAfterPlanFragment::class.java),
-        Pair(DummyDataModel.States.FAILED_ONCE, HomeAfterPlanFragment::class.java),
-        Pair(DummyDataModel.States.SUCCEEDED_ONCE, HomeAfterSuccessFragment::class.java),
+        Pair(DummyDataModel.States.ACTIVE_PLANNED, Habits2Fragment::class.java),
+        Pair(DummyDataModel.States.FAILED_ONCE, Habits2Fragment::class.java),
+        Pair(DummyDataModel.States.SUCCEEDED_ONCE, Habits2Fragment::class.java),
         Pair(DummyDataModel.States.AFTER_WEEKS, Habits3Fragment::class.java)
     )
 
@@ -201,11 +201,12 @@ class MainActivity : AppCompatActivity() {
             }
             Tabs.IMPACT -> {
                 appToolbar.title = resources.getString(R.string.title_impact)
-                appBarLayout.elevation = 0f
 
-                if (preferences.state == DummyDataModel.States.AFTER_WEEKS){
+                if (preferences.state == DummyDataModel.States.AFTER_WEEKS) {
+                    appBarLayout.elevation = 0f
                     openFragment(ImpactFragment.newInstance())
                 } else {
+                    appBarLayout.elevation = defaultElevation
                     openFragment(ImpactEmpty.newInstance())
                 }
             }
@@ -242,6 +243,7 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
     fun showImpactTab() {
         nav_view.selectedItemId = R.id.navigation_impact
     }
