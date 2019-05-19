@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import eu.eitdigital.hcid.sustainabilitycoach.explore.HabitsDetailsDialog
 import eu.eitdigital.hcid.sustainabilitycoach.home.*
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
 import eu.eitdigital.hcid.sustainabilitycoach.model.PREF_NAME
@@ -19,7 +20,7 @@ import eu.eitdigital.hcid.sustainabilitycoach.plan.PlanActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), HomeInteractionListener {
 
     private var currentFragment: String? = null
 
@@ -252,4 +253,15 @@ class MainActivity : AppCompatActivity() {
         Snackbar.make(fragment_container, "This action is currently not supported!", Snackbar.LENGTH_LONG)
             .show()
     }
+
+    override fun showDetailsDialog() {
+        val dialog = HabitsDetailsDialog.newInstance()
+        val ft = supportFragmentManager.beginTransaction()
+        dialog.show(ft, HabitsDetailsDialog.TAG)
+    }
+
+    override fun openImpactScreen(){
+        openFragment(ImpactFragment.newInstance())
+    }
+
 }

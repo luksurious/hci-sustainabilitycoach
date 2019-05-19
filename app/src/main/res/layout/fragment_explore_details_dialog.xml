@@ -6,7 +6,7 @@
                                                    android:layout_height="match_parent"
                                                    android:layout_marginBottom="56dp"
                                                    android:background="@color/backgroundColour"
-                                                   tools:context=".explore.ExploreDetailsDialog">
+                                                   >
 
     <ScrollView
             android:id="@+id/scrollView"

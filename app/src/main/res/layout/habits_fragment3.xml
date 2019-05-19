@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColour"
-    tools:context=".explore.ExploreResultsFragment">
+    tools:context=".HomeInteractionListener">
 
     <LinearLayout
         android:orientation="vertical"
