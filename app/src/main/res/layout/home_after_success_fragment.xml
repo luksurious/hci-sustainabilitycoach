@@ -198,11 +198,11 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
-                        android:text="Did you achieve it today?"
+                        android:text="Achieved today!"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/button2"
+                        android:id="@+id/button_impact"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -210,8 +210,9 @@
                         android:layout_marginBottom="8dp"
                         android:paddingRight="16dp"
                         android:paddingLeft="16dp"
-                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                        android:text="Enter result"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeColor="@color/colorPrimary"
+                        android:text="View impact"
                         android:textSize="16sp"
                         app:cornerRadius="20dp"
                         />

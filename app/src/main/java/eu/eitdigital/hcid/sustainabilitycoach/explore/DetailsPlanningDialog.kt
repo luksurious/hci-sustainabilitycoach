@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_explore_details_planning_dialog.*
 
@@ -37,6 +39,11 @@ class DetailsPlanningDialog: DialogFragment() {
 
         imageClose.setOnClickListener{
             listener?.finishExploreActive()
+        }
+
+        buttonWithoutCoach.setOnClickListener {
+            Toast.makeText(activity, "This selection is currently not supported!", Toast.LENGTH_LONG)
+                .show()
         }
 
         MeatCard.setOnClickListener { dialog?.dismiss() }

@@ -137,7 +137,7 @@
             <androidx.viewpager.widget.ViewPager
                     android:id="@+id/pager_details_habit"
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"
+                    android:layout_height="550dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="@color/backgroundColour"

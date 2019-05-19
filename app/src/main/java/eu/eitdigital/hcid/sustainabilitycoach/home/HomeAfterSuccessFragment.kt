@@ -1,16 +1,13 @@
 package eu.eitdigital.hcid.sustainabilitycoach.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
-import eu.eitdigital.hcid.sustainabilitycoach.FillResultsActivity
 import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
-import kotlinx.android.synthetic.main.home_after_plan_fragment.*
+import kotlinx.android.synthetic.main.home_after_success_fragment.*
 
 class HomeAfterSuccessFragment() : Fragment() {
 
@@ -20,9 +17,8 @@ class HomeAfterSuccessFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        button2.setOnClickListener {
-            val intent = Intent(activity, FillResultsActivity::class.java)
-            startActivity(intent)
+        button_impact.setOnClickListener {
+            (activity as MainActivity).showImpactTab()
         }
         MeatCard.setOnClickListener { (activity as MainActivity).showUnsupportedActionMessage() }
     }

@@ -103,17 +103,11 @@ class MainActivity : AppCompatActivity(), HomeInteractionListener {
             }
             R.id.nav_start_fill_dayone -> {
                 preferences.state = DummyDataModel.States.ACTIVE_PLANNED
-                /*Intent(this, FillResultsActivity::class.java).apply {
-                    startActivity(this)
-                }*/
                 showFragmentOfState()
             }
             R.id.nav_start_fill_daytwo -> {
                 preferences.state = DummyDataModel.States.FAILED_ONCE
-                Intent(this, FillResultsSucceedActivity::class.java).apply {
-                    startActivity(this)
-                }
-                //showFragmentOfState()
+                showFragmentOfState()
             }
             R.id.nav_start_fill_end -> {
                 preferences.state = DummyDataModel.States.SUCCEEDED_ONCE

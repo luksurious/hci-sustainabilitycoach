@@ -28,6 +28,7 @@ class Habits3Fragment: Fragment() {
         MeatCard.setOnClickListener {
             listener?.showDetailsDialog(1)
         }
+        button_create_habit.setOnClickListener { showUnsupportedActionMessage() }
     }
 
     override fun onAttach(context: Context) {

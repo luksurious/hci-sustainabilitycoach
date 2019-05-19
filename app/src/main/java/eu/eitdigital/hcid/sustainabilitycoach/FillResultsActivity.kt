@@ -21,45 +21,44 @@ import kotlinx.android.synthetic.main.activity_fill_results.fragment_container
 class FillResultsActivity : AppCompatActivity() {
     private lateinit var preferences: DummyDataModel
 
-    private var listener: PlanFragmentInteractionListener? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fill_results)
         preferences = DummyDataModel(getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE));
         setSupportActionBar(appToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        var flag=false;
+        var flag = false;
         goButton.isEnabled = false
-        goButton.setOnClickListener{
+        goButton.setOnClickListener {
 
             var id: Int = radio_group.checkedRadioButtonId
-                val radio: RadioButton = findViewById(id)
-            if (id!=-1){
-                if(radio.text.equals("NO")){
-                    flag=true;
-                }else{
+            val radio: RadioButton = findViewById(id)
+            if (id != -1) {
+                if (radio.id == R.id.noOption) {
+                    flag = true;
+                } else {
                     showUnsupportedActionMessage()
                 }
-               if (restaurantOpt.isChecked && !(groceriesOpt.isChecked) && !(desireOpt.isChecked) && !(otherOpt.isChecked) && flag){
-                   flag=true;
-               }else{
-                   showUnsupportedActionMessage()
-                   flag=false;
-               }
+                if (restaurantOpt.isChecked && !(groceriesOpt.isChecked) && !(desireOpt.isChecked) && !(otherOpt.isChecked) && flag) {
+                    flag = true;
+                } else {
+                    showUnsupportedActionMessage()
+                    flag = false;
+                }
             }
-            if (flag){
+            if (flag) {
                 preferences.state = DummyDataModel.States.FAILED_ONCE
                 val intent = Intent(this, ReschedulingActivity::class.java)
                 //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
-                Toast.makeText(applicationContext,"Your results were saved!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Your results were saved!", Toast.LENGTH_SHORT).show()
 
             }
 
         }
 
     }
+
     /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.explore_plan_options, menu)
         return true
@@ -67,8 +66,8 @@ class FillResultsActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             android.R.id.home -> {
-                    onBackPressed()
-                    return true
+                onBackPressed()
+                return true
 
             }
             R.id.explore_plan_cancel -> {
@@ -77,17 +76,19 @@ class FillResultsActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    fun radio_button_click(view: View){
+
+    fun radioButtonClick(view: View) {
         val radio: RadioButton = findViewById(radio_group.checkedRadioButtonId)
-        if(radio.text.equals("NO")){
+        if (radio.id == R.id.noOption) {
             checkboxCard.visibility = View.VISIBLE
-        }else{
+        } else {
             checkboxCard.visibility = View.GONE
         }
-        goButton.isEnabled=true;
+        goButton.isEnabled = true;
 
     }
-    fun  showUnsupportedActionMessage() {
+
+    fun showUnsupportedActionMessage() {
         Snackbar.make(fragment_container, "This selection is currently not supported!", Snackbar.LENGTH_LONG)
             .show()
     }

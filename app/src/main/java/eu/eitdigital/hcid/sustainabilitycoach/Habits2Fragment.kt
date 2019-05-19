@@ -23,6 +23,7 @@ class Habits2Fragment: Fragment() {
         MeatCard.setOnClickListener {
             listener?.showDetailsDialog(2)
         }
+        button_create_habit.setOnClickListener { showUnsupportedActionMessage() }
     }
 
     private fun showUnsupportedActionMessage() {
