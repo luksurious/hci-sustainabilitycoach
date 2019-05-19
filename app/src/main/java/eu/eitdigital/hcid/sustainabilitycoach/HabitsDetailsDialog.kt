@@ -19,18 +19,17 @@ import eu.eitdigital.hcid.sustainabilitycoach.R
 import kotlinx.android.synthetic.main.fragment_explore_details_dialog.*
 
 
-class HabitsDetailsDialog : DialogFragment() {
+class HabitsDetailsDialog (number: Int) : DialogFragment() {
 
     private lateinit var demoCollectionPagerAdapter: HomePagerAdapter
     private lateinit var viewPager: ViewPager
-    private var numberHabitsScreen: Int = 1
+    private var numberHabitsScreen: Int = number
     private var listener: HomeInteractionListener? = null
 
 
     companion object {
         val TAG = "HabitsDetailsDialog"
-        fun newInstance(number:Int) = HabitsDetailsDialog()
-        //numberHabitsScreen: Int = number
+        fun newInstance(number: Int) = HabitsDetailsDialog(number)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
