@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.google.android.material.tabs.TabLayout
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+import kotlinx.android.synthetic.main.impact_general_co2.*
 
 
 class ImpactGeneralFragment: Fragment() {
@@ -57,6 +57,17 @@ class GeneralCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAda
 class ImpactCO2Fragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.impact_general_co2, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        co_info.setOnClickListener {
+            val dialog = ImpactCO2Explanation.newInstance()
+
+            val ft = activity?.supportFragmentManager?.beginTransaction()
+            if (ft != null) {
+                dialog.show(ft, ImpactCO2Explanation.TAG)
+            }
+        }
+    }
 }
 
 class ImpactForestFragment: Fragment() {
@@ -68,3 +79,4 @@ class ImpactWaterFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.impact_general_water, container, false)
 }
+
