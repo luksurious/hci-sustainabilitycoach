@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:id="@+id/plan_coach_info"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   tools:context=".plan.ui.PlanCoachInfoDialogFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/plan_coach_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-                android:id="@+id/dialogToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorPrimaryDark"
-                app:title="What is CO2 ?"
-                app:titleTextColor="@color/colorLight" />
+            android:id="@+id/dialogToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:title="About the CO2 impact"
+            app:titleTextColor="@color/colorLight" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The concentration of CO2 is rising because the rate of CO2 emission in the atmosphere is greater than the rate of its absorption creating an imbalance in the carbon cycle. The carbon dioxide emission in the atmosphere comes from both natural and human activities. The primary source of increased CO2 emissions is the increase in the burning of fossil fuels to meet the energy demand. The emission of carbon dioxide is measured by weight in tons of CO2. The amount of CO2 by weight can be calculated using the molecular weight of carbon dioxide and molecular weight and the total weight of air in the atmosphere. The molecular weight of CO2 is 44 g/mole, and that of air is 28.97 g/mole. The total mean mass of the atmosphere is approximately 5×1015 tonnes. At the concentration of 400 ppm, the amount of CO2 in the atmosphere by weight is 3,000 Gt of CO2 (400 x 10-6 x 44/28.97 x 5 x 1015). The CO2 concentration increased from 369.55 ppm in 2000 to 389.90 ppm in 2010 (Source: ftp://aftp.cmdl.noaa.gov). The change in concentration implies addition of 154.5 Gt CO2 to the atmosphere from 2000-2010. As per the data on historical emissions, the total emission in this period was 344 Gt CO2 (Source: https://www.climatewatchdata.org) indicating that the carbon sinks absorbed around 45% of the total emissions and the rest remained in the atmosphere. The atmospheric lifetime of CO2 molecules is 50-200 years. Hence, the CO2 emitted at a given time gets accumulated in the atmosphere for a long period."
-            android:padding="16dp"
-            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
             android:lineSpacingExtra="4sp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            android:padding="16dp"
+            android:text="The concentration of CO2 is rising because the rate of CO2 emission in the atmosphere is greater than the rate of its absorption creating an imbalance in the carbon cycle. The carbon dioxide emission in the atmosphere comes from both natural and human activities. The primary source of increased CO2 emissions is the increase in the burning of fossil fuels to meet the energy demand. The emission of carbon dioxide is measured by weight in tons of CO2. The amount of CO2 by weight can be calculated using the molecular weight of carbon dioxide and molecular weight and the total weight of air in the atmosphere. The molecular weight of CO2 is 44 g/mole, and that of air is 28.97 g/mole. The total mean mass of the atmosphere is approximately 5×1015 tonnes. At the concentration of 400 ppm, the amount of CO2 in the atmosphere by weight is 3,000 Gt of CO2 (400 x 10-6 x 44/28.97 x 5 x 1015). The CO2 concentration increased from 369.55 ppm in 2000 to 389.90 ppm in 2010 (Source: ftp://aftp.cmdl.noaa.gov). The change in concentration implies addition of 154.5 Gt CO2 to the atmosphere from 2000-2010. As per the data on historical emissions, the total emission in this period was 344 Gt CO2 (Source: https://www.climatewatchdata.org) indicating that the carbon sinks absorbed around 45% of the total emissions and the rest remained in the atmosphere. The atmospheric lifetime of CO2 molecules is 50-200 years. Hence, the CO2 emitted at a given time gets accumulated in the atmosphere for a long period."
+            android:textColor="@color/grey"
+            android:textSize="16sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

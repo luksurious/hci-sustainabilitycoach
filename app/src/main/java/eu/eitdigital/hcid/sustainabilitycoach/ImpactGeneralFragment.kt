@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import kotlinx.android.synthetic.main.impact_general_co2.*
+import kotlinx.android.synthetic.main.impact_general_forest.*
+import kotlinx.android.synthetic.main.impact_general_water.*
 
 
 class ImpactGeneralFragment: Fragment() {
@@ -73,10 +75,32 @@ class ImpactCO2Fragment: Fragment() {
 class ImpactForestFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.impact_general_forest, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        forest_info.setOnClickListener {
+            val dialog = ImpactForestExplanation.newInstance()
+
+            val ft = activity?.supportFragmentManager?.beginTransaction()
+            if (ft != null) {
+                dialog.show(ft, ImpactForestExplanation.TAG)
+            }
+        }
+    }
 }
 
 class ImpactWaterFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.impact_general_water, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        water_info.setOnClickListener {
+            val dialog = ImpactWaterExplanation.newInstance()
+
+            val ft = activity?.supportFragmentManager?.beginTransaction()
+            if (ft != null) {
+                dialog.show(ft, ImpactWaterExplanation.TAG)
+            }
+        }
+    }
 }
 

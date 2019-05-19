@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.impact_explanation_co2.*
 
-class ImpactCO2Explanation: DialogFragment() {
+class ImpactWaterExplanation: DialogFragment() {
     companion object {
-        val TAG = "ImpactCO2Explanation"
+        val TAG = "ImpactWaterExplanation"
 
-        fun newInstance() = ImpactCO2Explanation()
+        fun newInstance() = ImpactWaterExplanation()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class ImpactCO2Explanation: DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.impact_explanation_co2, container, false)
+        return inflater.inflate(R.layout.impact_explanation_water, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
