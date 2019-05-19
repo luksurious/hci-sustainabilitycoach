@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:background="@color/backgroundColour">
+              android:layout_height="match_parent" android:background="@color/backgroundColour"
+              android:orientation="vertical">
 
     <ScrollView
             android:layout_width="match_parent"
@@ -12,52 +12,60 @@
                       android:layout_height="match_parent"
                       android:orientation="vertical">
             <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp">
+                <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="20dp"
-                        app:cardElevation="2dp"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginRight="40dp"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginBottom="24dp">
-                    <LinearLayout
-                            android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                    <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                        <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/factory"
-                                android:id="@+id/imageView2"
-                                android:scaleType="centerCrop"
-                                android:contentDescription="Factory image"/>
-                        <TextView
-                                android:text="You saved 7.6kg of CO2 gases, the equivalent of"
-                                android:layout_width="match_parent"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_height="wrap_content" android:id="@+id/textView6"
-                                android:paddingTop="14dp" android:paddingBottom="2dp"
-                                android:fontFamily="@font/montserrat" android:textAlignment="center"
-                                android:textSize="12sp"/>
-                        <TextView
-                                android:text="1 trip from Madrid to El Escorial by car"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="22sp"
-                                android:textColor="#141418" android:textAlignment="center" android:paddingLeft="10dp"
-                                android:paddingTop="8dp" android:paddingRight="10dp" android:paddingBottom="16dp"
-                                android:fontFamily="@font/montserrat_bold"/>
-                        <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/textView4"
-                                android:fontFamily="@font/montserrat"
-                                android:textAlignment="center"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="12dp" android:paddingRight="10dp" android:paddingBottom="12dp"
-                                android:text="CO2 impact" android:background="#1B00B8D4"/>
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/factory"
+                            android:id="@+id/imageView2"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="Factory image"/>
+                    <TextView
+                            android:text="You saved 7.6kg of CO2 gases, the equivalent of"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_height="wrap_content" android:id="@+id/textView6"
+                            android:paddingTop="14dp" android:paddingBottom="2dp"
+                            android:fontFamily="@font/montserrat" android:textAlignment="center"
+                            android:textSize="12sp"/>
+                    <TextView
+                            android:text="1 trip from Madrid to El Escorial by car"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="22sp"
+                            android:textColor="#141418" android:textAlignment="center" android:paddingLeft="10dp"
+                            android:paddingTop="8dp" android:paddingRight="10dp" android:paddingBottom="16dp"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView4"
+                            android:fontFamily="@font/montserrat"
+                            android:textAlignment="center"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="12dp" android:paddingRight="10dp" android:paddingBottom="12dp"
+                            android:text="CO2 impact" android:background="#1B00B8D4"/>
+                    <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/i"
+                            android:scaleType="centerCrop"
+                            android:id="@+id/i"
+                            android:layout_gravity="right" android:layout_marginTop="-32dp"
+                            android:layout_marginRight="15dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
             <TextView
                     android:text="Impact by task"
                     android:layout_width="wrap_content"
