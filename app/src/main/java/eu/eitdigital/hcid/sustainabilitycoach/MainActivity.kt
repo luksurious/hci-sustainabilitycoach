@@ -254,14 +254,20 @@ class MainActivity : AppCompatActivity(), HomeInteractionListener {
             .show()
     }
 
-    override fun showDetailsDialog() {
-        val dialog = HabitsDetailsDialog.newInstance()
+    override fun showDetailsDialog(number:Int) {
+        val dialog = HabitsDetailsDialog.newInstance(number)
         val ft = supportFragmentManager.beginTransaction()
         dialog.show(ft, HabitsDetailsDialog.TAG)
     }
 
     override fun openImpactScreen(){
         openFragment(ImpactFragment.newInstance())
+    }
+
+    override fun enterResultsScreen(){
+        Intent(this, FillResultsActivity::class.java).apply {
+            startActivity(this)
+        }
     }
 
 }

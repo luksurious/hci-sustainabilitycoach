@@ -23,14 +23,15 @@ class HabitsDetailsDialog : DialogFragment() {
 
     private lateinit var demoCollectionPagerAdapter: HomePagerAdapter
     private lateinit var viewPager: ViewPager
+    private var numberHabitsScreen: Int = 1
+    private var listener: HomeInteractionListener? = null
+
 
     companion object {
         val TAG = "HabitsDetailsDialog"
-
-        fun newInstance() = HabitsDetailsDialog()
+        fun newInstance(number:Int) = HabitsDetailsDialog()
+        //numberHabitsScreen: Int = number
     }
-
-    private var listener: HomeInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,11 +51,22 @@ class HabitsDetailsDialog : DialogFragment() {
             dialog?.dismiss()
         }
 
-        button_start_habit.setText("VIEW IMPACT")
+        if(numberHabitsScreen == 1){
+            button_start_habit.setText("VIEW IMPACT")
 
-        button_start_habit.setOnClickListener {
-            listener?.openImpactScreen()
-            dialog?.hide()
+            button_start_habit.setOnClickListener {
+                listener?.openImpactScreen()
+                dialog?.hide()
+            }
+        }
+
+        else if (numberHabitsScreen == 2){
+            button_start_habit.setText("ENTER RESULTS")
+
+            button_start_habit.setOnClickListener {
+                listener?.enterResultsScreen()
+                dialog?.hide()
+            }
         }
 
         demoCollectionPagerAdapter = HomePagerAdapter(childFragmentManager)

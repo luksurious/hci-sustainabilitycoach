@@ -26,7 +26,7 @@ class Habits3Fragment: Fragment() {
         }
 
         MeatCard.setOnClickListener {
-            listener?.showDetailsDialog()
+            listener?.showDetailsDialog(1)
         }
     }
 

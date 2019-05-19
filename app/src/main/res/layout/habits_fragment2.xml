@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColour"
     android:orientation="vertical"
-    tools:context=".explore.ExploreResultsFragment">
+    tools:context=".HomeInteractionListener">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/MeatCard"
