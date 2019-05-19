@@ -116,7 +116,7 @@
                             android:layout_weight=".40"
                             android:drawableStart="@drawable/ic_leaf"
                             android:drawablePadding="4dp"
-                            android:text="Medium impact"
+                            android:text="Mid impact"
                             android:textSize="14sp" />
 
                     </LinearLayout>
