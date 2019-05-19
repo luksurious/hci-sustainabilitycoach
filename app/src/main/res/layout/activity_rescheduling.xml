@@ -70,7 +70,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="12dp"
                     android:textAlignment="center"
-                    android:text="Don’t give up! Sometimes is hard to achieve a habit."
+                    android:text="Don't give up! Sometimes it is hard to achieve a habit."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -107,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:text="Yes, remind me on:"
             app:layout_constraintEnd_toEndOf="parent"
