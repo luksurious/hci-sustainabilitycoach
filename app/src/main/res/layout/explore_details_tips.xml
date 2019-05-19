@@ -12,7 +12,7 @@
             android:layout_height="150dp"
             android:src="@drawable/cardvegetables"
             android:layout_marginBottom="0dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="0dp"
@@ -32,6 +32,20 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_bias="0.0"
             android:id="@+id/spices_card"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="0dp"
             app:layout_constraintTop_toBottomOf="@+id/veg_card"/>
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/cardfish"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="0dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"
+            android:id="@+id/fish_card"
+            app:layout_constraintTop_toBottomOf="@+id/spices_card"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
