@@ -244,6 +244,9 @@ class MainActivity : AppCompatActivity(), HomeInteractionListener {
             super.onBackPressed()
         }
     }
+    fun  getStatus():DummyDataModel.States{
+       return preferences.state
+    }
 
     fun showImpactTab() {
         nav_view.selectedItemId = R.id.navigation_impact

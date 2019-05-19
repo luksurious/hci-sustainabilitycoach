@@ -50,20 +50,20 @@ class FillResultsActivity : AppCompatActivity() {
             }
             if (flag){
                 preferences.state = DummyDataModel.States.FAILED_ONCE
-                val intent = Intent(this, MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                val intent = Intent(this, ReschedulingActivity::class.java)
+                //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 Toast.makeText(applicationContext,"Your results were saved!", Toast.LENGTH_SHORT).show()
-                listener?.finishTaskToDashboard()
+
             }
 
         }
 
     }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.explore_plan_options, menu)
         return true
-    }
+    }*/
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             android.R.id.home -> {
