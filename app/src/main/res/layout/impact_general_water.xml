@@ -36,7 +36,7 @@
                             android:layout_height="wrap_content" android:id="@+id/textView6"
                             android:paddingTop="14dp" android:paddingBottom="2dp"
                             android:fontFamily="@font/montserrat" android:textAlignment="center"
-                            android:textSize="12sp"/>
+                            android:textSize="14sp"/>
                     <TextView
                             android:text="350 showers of 8 minutes"
                             android:layout_width="match_parent"

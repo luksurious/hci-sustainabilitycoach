@@ -31,12 +31,12 @@
                             android:id="@+id/imageView2"
                             />
                     <TextView
-                            android:text="You saved 90m² of landfield , the equivalent of"
+                            android:text="You saved 90m² of land, the equivalent of"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/textView6"
                             android:paddingTop="14dp" android:paddingBottom="2dp"
                             android:fontFamily="@font/montserrat" android:textAlignment="center"
-                            android:textSize="12sp"/>
+                            android:textSize="14sp"/>
                     <TextView
                             android:text="21 ping pong tables"
                             android:layout_width="match_parent"
