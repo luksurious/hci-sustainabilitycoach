@@ -10,6 +10,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ReschedulingActivity">
+        </activity>
         <activity android:name=".FillResultsSucceedActivity">
         </activity>
         <activity android:name=".FillResultsActivity">

@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import eu.eitdigital.hcid.sustainabilitycoach.FillResultsActivity
+import eu.eitdigital.hcid.sustainabilitycoach.FillResultsSucceedActivity
 import eu.eitdigital.hcid.sustainabilitycoach.MainActivity
 import eu.eitdigital.hcid.sustainabilitycoach.R
 import eu.eitdigital.hcid.sustainabilitycoach.model.DummyDataModel
@@ -30,8 +31,13 @@ class HomeAfterPlanFragment() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         button2.setOnClickListener {
-            val intent = Intent(activity, FillResultsActivity::class.java)
-            startActivity(intent)
+           if((activity as MainActivity).getStatus()==DummyDataModel.States.ACTIVE_PLANNED) {
+               val intent = Intent(activity, FillResultsActivity::class.java)
+               startActivity(intent)
+           }else{
+               val intent = Intent(activity, FillResultsSucceedActivity::class.java)
+               startActivity(intent)
+           }
         }
 
         MeatCard.setOnClickListener { (activity as MainActivity).showUnsupportedActionMessage() }
