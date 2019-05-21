@@ -123,8 +123,8 @@ class MainActivity : AppCompatActivity(), HomeInteractionListener {
         return@OnNavigationItemSelectedListener true
     }
 
-    private fun setupHomeTab(addToBack: Boolean = true) {
-        openFragment(HomeFragment.newInstance(), addToBack)
+    private fun setupHomeTab(allowStateLoss: Boolean = true) {
+        openFragment(HomeFragment.newInstance(), allowStateLoss)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -160,11 +160,15 @@ class MainActivity : AppCompatActivity(), HomeInteractionListener {
         super.onRestart()
 
         if (!isFinishing) {
-            showFragmentOfState()
+            try {
+                showFragmentOfState(true)
+            } catch (e: IllegalStateException) {
+                Log.e("ERROR", e.message)
+            }
         }
     }
 
-    private fun showFragmentOfState() {
+    private fun showFragmentOfState(allowStateLoss: Boolean = false) {
 
         activateCorrectTab()
         when (activeTab) {
@@ -175,10 +179,10 @@ class MainActivity : AppCompatActivity(), HomeInteractionListener {
 
                 val fragment: Fragment? = homeStateFragments[preferences.state]?.newInstance()
                 if (fragment == null) {
-                    setupHomeTab()
+                    setupHomeTab(allowStateLoss)
                 } else {
                     Log.i("STATE", "State is " + preferences.state)
-                    openFragment(fragment)
+                    openFragment(fragment, allowStateLoss)
                 }
             }
             Tabs.HABITS -> {
@@ -192,23 +196,23 @@ class MainActivity : AppCompatActivity(), HomeInteractionListener {
                 }
 
                 Log.i("STATE", "State is " + preferences.state)
-                openFragment(fragment)
+                openFragment(fragment, allowStateLoss)
             }
             Tabs.IMPACT -> {
                 appToolbar.title = resources.getString(R.string.title_impact)
 
                 if (preferences.state == DummyDataModel.States.AFTER_WEEKS) {
                     appBarLayout.elevation = 0f
-                    openFragment(ImpactFragment.newInstance())
+                    openFragment(ImpactFragment.newInstance(), allowStateLoss)
                 } else {
                     appBarLayout.elevation = defaultElevation
-                    openFragment(ImpactEmpty.newInstance())
+                    openFragment(ImpactEmpty.newInstance(), allowStateLoss)
                 }
             }
             Tabs.PROFILE -> {
                 appToolbar.title = resources.getString(R.string.title_profile)
                 appBarLayout.elevation = defaultElevation
-                openFragment(ProfileFragment.newInstance())
+                openFragment(ProfileFragment.newInstance(), allowStateLoss)
             }
         }
     }
@@ -220,10 +224,14 @@ class MainActivity : AppCompatActivity(), HomeInteractionListener {
         Tabs.PROFILE -> nav_view.menu.findItem(R.id.navigation_profile)?.isChecked = true
     }
 
-    private fun openFragment(fragment: Fragment, addToBack: Boolean = true) {
+    private fun openFragment(fragment: Fragment, allowStateLoss: Boolean = false) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
-        transaction.commit()
+        if (allowStateLoss) {
+            transaction.commitAllowingStateLoss()
+        } else {
+            transaction.commit()
+        }
         currentFragment = fragment.javaClass.name
     }
 
